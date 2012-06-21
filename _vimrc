@@ -1,11 +1,14 @@
+" @vimonly
 version 6.0
 
 " ----general options
 set runtimepath=~/.vim,/var/lib/vim/addons,/usr/share/vim/vimfiles,/usr/share/vim/vim73,/usr/share/vim/vimfiles/after,/var/lib/vim/addons/after,~/.vim/after
 set nocompatible
+" ~@vimonly
 set nobackup
 set autoread
 
+" @vimonly
 " ---- extensions
 " pathogen
 call pathogen#infect('~/Dropbox/Others/vim_share/bundle')
@@ -48,6 +51,7 @@ inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
 " ++++++++++
 
+" ~@vimonly
 " ----CLI
 " --cmdline
 set wildmenu
