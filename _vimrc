@@ -1,4 +1,4 @@
-" @vimonly
+﻿" @vimonly
 version 6.0
 
 " ----general options
@@ -105,7 +105,7 @@ set nosmartindent
 
 " ---- keybinds
 nmap gx <Plug>NetrwBrowseX
-nnoremap <silent> <Plug>NetrwBrowseX :call netrw#NetrwBrowseX(expand("<cWORD>"),0)
+nnoremap <silent> <Plug>NetrwBrowseX :call netrw#NetrwBrowseX(expand("<cWORD>"),0)
 nnoremap j gj
 nnoremap k gk
 
