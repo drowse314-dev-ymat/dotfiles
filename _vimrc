@@ -1,4 +1,4 @@
-﻿" @vimonly
+" @vimonly
 version 6.0
 
 " ----general options
