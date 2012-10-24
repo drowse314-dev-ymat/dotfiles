@@ -6,6 +6,6 @@
 
 ##Recommendation
 
-Things go easy using `source` like:
+Things go easy using `source` like
     source /path/to/this/dotfiles/directory/_vimrc
 in your local *.vimrc* files, etc.
