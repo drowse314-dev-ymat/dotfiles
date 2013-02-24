@@ -22,7 +22,7 @@ fi
 echo 'Generate _gvimrc';
 python gen_gvimrc.py _vimrc;
 if [ ! $? ]; then
-    /c/Python*/python gen_gvimrc.py _vimrc;
+    python gen_gvimrc.py _vimrc;
     if [ ! $? ]; then
         echo 'Failed to create _gvimrc. Make it manually like:';
         echo '$ python gen_gvimrc.py _vimrc';
@@ -33,11 +33,11 @@ echo 'Setting local rc files...';
 
 if [ `uname` = "Darwin" ] || [ `uname` = "Linux" ]; then
     pref='.';
-    cwd=$(cd $(dirname $0);pwd);
 else
     pref='_';
-    cwd=$(/c/Python*/python winpath.py);
 fi
+
+cwd=$(python winpath.py);
 
 # vimrc
 echo "source ${cwd}/_vimrc" > ~/${pref}vimrc;
