@@ -1,6 +1,4 @@
 " @vimonly
-version 6.0
-
 " General options.
 set nocompatible
 " ~@vimonly
@@ -22,6 +20,8 @@ NeoBundle 'git://github.com/tpope/vim-fugitive.git'
 NeoBundle 'git://github.com/scrooloose/nerdtree.git'
 NeoBundle 'git://github.com/Shougo/neocomplcache.git'
 NeoBundle 'git://github.com/Shougo/neosnippet.git'
+NeoBundle 'git://github.com/ciaranm/inkpot.git'
+NeoBundle 'git://github.com/jnurmine/Zenburn.git'
 " ++++++++++++++
 " --theNERDTree++++++++++
 nmap <Leader>t :NERDTreeToggle<CR>
@@ -29,21 +29,13 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 " ++++++++++
 " --Neocomplcache++++++++++
 let g:neocomplcache_enable_at_startup = 1
-imap <C-k> <Plug>(neocomplcache_snippets_expand)
-smap <C-k> <Plug>(neocomplcache_snippets_expand)
-inoremap <expr><C-y> neocomplcache#close_popup()
-noremap <expr><C-e> neocomplcache#cancel_popup()
-inoremap <expr><C-g> neocomplcache#undo_completion()
-inoremap <expr><C-l> neocomplcache#complete_common_string()
 " <CR>: close popup and save indent.
 inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
 " <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-" <BS>: close popup and delete backword char.
-inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
 " ++++++++++
 
-" ~@vimonly
+
 " CUI options.
 " --cmdline
 set wildmenu
@@ -56,6 +48,7 @@ set wrapscan
 set incsearch
 set ignorecase
 set smartcase
+
 " ----UI
 syntax enable
 " line number & ruler
@@ -72,10 +65,11 @@ set tabstop=8
 filetype plugin on
 " color settings
 set t_Co=256
-colorscheme zenburn
+colorscheme inkpot
 " dynamic colors
-noremap <expr><S-t> ":colorscheme zellner <CR> :set nocursorcolumn<CR>"
-noremap <expr><C-c> ":colorscheme zenburn<CR> :set cursorcolumn<CR>"
+noremap <expr><S-t> ":let g:zenburn_high_Contrast=0<CR> :colorscheme zenburn<CR>"
+noremap <expr><S-y> ":let g:zenburn_high_Contrast=1<CR> :colorscheme zenburn<CR>"
+noremap <expr><C-c> ":colorscheme inkpot<CR>"
 
 " ----edit
 set backspace=indent,eol,start
@@ -105,4 +99,3 @@ set guicursor=n-v-c:block,o:hor50,i-ci:hor15,r-cr:hor30,sm:block,a:blinkon0
 set helplang=ja
 set history=50
 set viminfo='20,\"50
-" vim: set ft=vim :

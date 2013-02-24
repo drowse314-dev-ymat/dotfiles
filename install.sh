@@ -22,35 +22,34 @@ fi
 echo 'Generate _gvimrc';
 python gen_gvimrc.py _vimrc;
 if [ ! $? ]; then
-    /c/Python*/python gen_gvimrc.py _vimrc;
+    python gen_gvimrc.py _vimrc;
     if [ ! $? ]; then
         echo 'Failed to create _gvimrc. Make it manually like:';
         echo '$ python gen_gvimrc.py _vimrc';
     fi
 fi
 
-echo 'Copy static resources...';
-cp ./res/* ~/vim_share/bundle
-
 echo 'Setting local rc files...';
 
 if [ `uname` = "Darwin" ] || [ `uname` = "Linux" ]; then
     pref='.';
-    cwd=$(cd $(dirname $0);pwd);
 else
     pref='_';
-    cwd=$(/c/Python*/python winpath.py);
 fi
+
+cwd=$(python winpath.py);
 
 # vimrc
 echo "source ${cwd}/_vimrc" > ~/${pref}vimrc;
-echo "\n" >> ~/${pref}vimrc; 
 echo "source ~/site_vimrc" >> ~/${pref}vimrc;
 echo "" > ~/site_vimrc;
 # gvimrc
-echo "source ${cwd}/_vimrc" > ~/${pref}vimrc;
-echo "\n" >> ~/${pref}gvimrc; 
-echo "source ~/site_vimrc" >> ~/${pref}vimrc;
+echo "source ${cwd}/_vimrc" > ~/${pref}gvimrc;
+echo "source ~/site_vimrc" >> ~/${pref}gvimrc;
 echo "" > ~/site_gvimrc;
+# vimperatorrc
+echo "source ${cwd}/_vimperatorrc" > ~/${pref}vimperatorrc;
+echo "source ~/site_vimperatorrc" >> ~/${pref}vimperatorrc;
+echo "" > ~/site_vimperatorrc;
 
 echo 'Complete! Run vim & execute :NeoBundleInstall';
