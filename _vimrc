@@ -48,6 +48,7 @@ set wrapscan
 set incsearch
 set ignorecase
 set smartcase
+
 " ----UI
 syntax enable
 " line number & ruler
