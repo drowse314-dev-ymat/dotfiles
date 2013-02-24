@@ -1,6 +1,4 @@
 " @vimonly
-version 6.0
-
 " General options.
 set nocompatible
 " ~@vimonly
@@ -29,21 +27,13 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 " ++++++++++
 " --Neocomplcache++++++++++
 let g:neocomplcache_enable_at_startup = 1
-imap <C-k> <Plug>(neocomplcache_snippets_expand)
-smap <C-k> <Plug>(neocomplcache_snippets_expand)
-inoremap <expr><C-y> neocomplcache#close_popup()
-noremap <expr><C-e> neocomplcache#cancel_popup()
-inoremap <expr><C-g> neocomplcache#undo_completion()
-inoremap <expr><C-l> neocomplcache#complete_common_string()
 " <CR>: close popup and save indent.
 inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
 " <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-" <BS>: close popup and delete backword char.
-inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
 " ++++++++++
 
-" ~@vimonly
+
 " CUI options.
 " --cmdline
 set wildmenu
@@ -105,4 +95,3 @@ set guicursor=n-v-c:block,o:hor50,i-ci:hor15,r-cr:hor30,sm:block,a:blinkon0
 set helplang=ja
 set history=50
 set viminfo='20,\"50
-" vim: set ft=vim :
