@@ -41,13 +41,11 @@ cwd=$(python winpath.py);
 
 # vimrc
 echo "source ${cwd}/_vimrc" > ~/${pref}vimrc;
-echo "\n" >> ~/${pref}vimrc; 
 echo "source ~/site_vimrc" >> ~/${pref}vimrc;
 echo "" > ~/site_vimrc;
 # gvimrc
-echo "source ${cwd}/_vimrc" > ~/${pref}vimrc;
-echo "\n" >> ~/${pref}gvimrc; 
-echo "source ~/site_vimrc" >> ~/${pref}vimrc;
+echo "source ${cwd}/_vimrc" > ~/${pref}gvimrc;
+echo "source ~/site_vimrc" >> ~/${pref}gvimrc;
 echo "" > ~/site_gvimrc;
 
 echo 'Complete! Run vim & execute :NeoBundleInstall';
