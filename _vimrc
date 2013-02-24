@@ -65,10 +65,11 @@ set tabstop=8
 filetype plugin on
 " color settings
 set t_Co=256
-colorscheme zenburn
+colorscheme inkpot
 " dynamic colors
-noremap <expr><S-t> ":colorscheme zellner <CR> :set nocursorcolumn<CR>"
-noremap <expr><C-c> ":colorscheme zenburn<CR> :set cursorcolumn<CR>"
+noremap <expr><S-t> ":let g:zenburn_high_Contrast=0<CR> :colorscheme zenburn<CR>"
+noremap <expr><S-y> ":let g:zenburn_high_Contrast=1<CR> :colorscheme zenburn<CR>"
+noremap <expr><C-c> ":colorscheme inkpot<CR>"
 
 " ----edit
 set backspace=indent,eol,start
