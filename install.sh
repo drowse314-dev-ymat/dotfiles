@@ -47,5 +47,9 @@ echo "" > ~/site_vimrc;
 echo "source ${cwd}/_vimrc" > ~/${pref}gvimrc;
 echo "source ~/site_vimrc" >> ~/${pref}gvimrc;
 echo "" > ~/site_gvimrc;
+# vimperatorrc
+echo "source ${cwd}/_vimperatorrc" > ~/${pref}vimperatorrc;
+echo "source ~/site_vimperatorrc" >> ~/${pref}vimperatorrc;
+echo "" > ~/site_vimperatorrc;
 
 echo 'Complete! Run vim & execute :NeoBundleInstall';
