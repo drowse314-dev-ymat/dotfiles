@@ -20,6 +20,8 @@ NeoBundle 'git://github.com/tpope/vim-fugitive.git'
 NeoBundle 'git://github.com/scrooloose/nerdtree.git'
 NeoBundle 'git://github.com/Shougo/neocomplcache.git'
 NeoBundle 'git://github.com/Shougo/neosnippet.git'
+NeoBundle 'git://github.com/ciaranm/inkpot.git'
+NeoBundle 'git://github.com/jnurmine/Zenburn.git'
 " ++++++++++++++
 " --theNERDTree++++++++++
 nmap <Leader>t :NERDTreeToggle<CR>

@@ -29,9 +29,6 @@ if [ ! $? ]; then
     fi
 fi
 
-echo 'Copy static resources...';
-cp ./res/* ~/vim_share/bundle
-
 echo 'Setting local rc files...';
 
 if [ `uname` = "Darwin" ] || [ `uname` = "Linux" ]; then
