@@ -60,11 +60,10 @@ set! ui.caretWidth=5
 "================qmarks------
 noremap go gn
 qmark g https://mail.google.com/
-qmark h http://www.yamaguti.comp.ae.keio.ac.jp/cgi-bin/hiki/
 qmark t http://twitter.com/
 qmark f http://www.facebook.com/
-qmark p http://docs.python.org/3.2/
-qmark b http://b.hatena.ne.jp/drowse314/
+qmark p http://docs.python.org/
+qmark j http://python-doc-ja.readthedocs.org/
 
 "================others------
 set toolbars=noaddons,nobookmarks,nomenu,navigation,tabs
