@@ -35,7 +35,7 @@ else
     pref='_';
 fi
 
-cwd=$(python winpath.py);
+cwd=$(python pwd.py);
 
 # rc file creations...
 confirm () {
