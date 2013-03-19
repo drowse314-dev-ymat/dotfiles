@@ -82,6 +82,7 @@ else
     echo "source ${cwd}/_vimperatorrc" >> $HOME/${pref}vimperatorrc;
 fi
 echo "source ~/site_vimperatorrc" >> $HOME/${pref}vimperatorrc;
+echo 'echo ""' >> $HOME/${pref}vimperatorrc;
 if confirm "$HOME/site_vimperatorrc" == 0; then
     echo "" > $HOME/site_vimperatorrc;
 fi
