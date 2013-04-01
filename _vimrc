@@ -15,12 +15,12 @@ if has('vim_starting')
     call neobundle#rc(expand('~/vim_share/bundle'))
 endif
 " plugins
-NeoBundle 'git://github.com/Shougo/neobundle.vim.git'
-NeoBundle 'git://github.com/scrooloose/nerdtree.git'
-NeoBundle 'git://github.com/Shougo/neocomplcache.git'
-NeoBundle 'git://github.com/Shougo/neosnippet.git'
-NeoBundle 'git://github.com/ciaranm/inkpot.git'
-NeoBundle 'git://github.com/jnurmine/Zenburn.git'
+NeoBundle 'Shougo/neobundle.vim.git'
+NeoBundle 'scrooloose/nerdtree.git'
+NeoBundle 'Shougo/neocomplcache.git'
+NeoBundle 'Shougo/neosnippet.git'
+NeoBundle 'ciaranm/inkpot.git'
+NeoBundle 'jnurmine/Zenburn.git'
 " ++++++++++++++
 " --theNERDTree++++++++++
 nmap <Leader>t :NERDTreeToggle<CR>
