@@ -86,5 +86,15 @@ echo 'echo ""' >> $HOME/${pref}vimperatorrc;
 if confirm "$HOME/site_vimperatorrc" == 0; then
     echo "" > $HOME/site_vimperatorrc;
 fi
+# zshrc
+if confirm "$HOME/${pref}zshrc" = 0; then
+    echo "source ${cwd}/_zshrc" > $HOME/${pref}zshrc;
+else
+    echo "source ${cwd}/_zshrc" >> $HOME/${pref}zshrc;
+fi
+echo "source ~/site_zshrc" >> $HOME/${pref}zshrc;
+if confirm "$HOME/site_zshrc" = 0; then
+    echo "" > $HOME/site_zshrc;
+fi
 
 echo 'Complete! Run vim & execute :NeoBundleInstall';
