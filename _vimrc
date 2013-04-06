@@ -32,6 +32,7 @@ let g:neocomplcache_enable_at_startup = 1
 inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
 " <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+set completeopt-=preview
 " ++++++++++
 
 
