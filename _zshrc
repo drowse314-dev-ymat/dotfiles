@@ -20,7 +20,6 @@ setopt list_packed
 setopt list_types
 setopt always_to_end
 setopt correct
-setopt correct_all
 setopt print_eight_bit
 bindkey "^[[Z" reverse-menu-complete
 
