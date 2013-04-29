@@ -96,5 +96,15 @@ echo "source ~/site_zshrc" >> $HOME/${pref}zshrc;
 if confirm "$HOME/site_zshrc" = 0; then
     echo "" > $HOME/site_zshrc;
 fi
+# tmux.conf
+if confirm "$HOME/${pref}tmux.conf" = 0; then
+    echo "source ${cwd}/_tmux_conf" > $HOME/${pref}tmux.conf;
+else
+    echo "source ${cwd}/_tmux_conf" >> $HOME/${pref}tmux.conf;
+fi
+echo "source ~/site_tmux_conf" >> $HOME/${pref}tmux.conf;
+if confirm "$HOME/site_tmux_conf" = 0; then
+    echo "" > $HOME/site_tmux_conf;
+fi
 
 echo 'Complete! Run vim & execute :NeoBundleInstall';

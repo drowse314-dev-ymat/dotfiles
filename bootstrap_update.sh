@@ -68,5 +68,13 @@ fi
 if file_exists "$HOME/site_zshrc" = 0; then
     echo "" > $HOME/site_zshrc;
 fi
+# tmux.conf
+if file_exists "$HOME/${pref}tmux.conf" = 0; then
+    echo "source ${cwd}/_tmux_conf" > $HOME/${pref}tmux.conf;
+    echo "source ~/site_tmux_conf" >> $HOME/${pref}tmux.conf;
+fi
+if file_exists "$HOME/site_tmux_conf" = 0; then
+    echo "" > $HOME/site_tmux_conf;
+fi
 
 echo 'Complete!';
