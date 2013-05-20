@@ -21,6 +21,7 @@ NeoBundle 'Shougo/neocomplcache.git'
 NeoBundle 'Shougo/neosnippet.git'
 NeoBundle 'ciaranm/inkpot.git'
 NeoBundle 'jnurmine/Zenburn.git'
+NeoBundle 'derekwyatt/vim-scala.git'
 " ++++++++++++++
 " --theNERDTree++++++++++
 nmap <Leader>t :NERDTreeToggle<CR>
