@@ -1,5 +1,13 @@
 echo 'Start installing .* files...';
 
+if [ `uname` = "Darwin" ] || [ `uname` = "Linux" ]; then
+    pref='.';
+    vimperator_dir='.vimperator'
+else
+    pref='_';
+    vimperator_dir='vimperator'
+fi
+
 echo 'Make desired directories...';
 mkdir ~/vim_share;
 if [ ! $? ]; then
@@ -11,7 +19,7 @@ if [ ! $? ]; then
     echo 'Failed to make directory: ~/vim_share/bundle';
     exit;
 fi
-mkdir ~/.vimperator;
+mkdir ~/${vimperator_dir};
 
 echo 'Cloning NeoBundle...';
 git clone https://github.com/Shougo/neobundle.vim.git ~/vim_share/bundle/neobundle.vim
@@ -22,14 +30,14 @@ if [ $ret_code != 0 ]; then
 fi
 
 echo 'Cloning vimperator-plugins...';
-git clone https://github.com/vimpr/vimperator-plugins.git ~/.vimperator/vimperator-plugins
+git clone https://github.com/vimpr/vimperator-plugins.git ~/${vimperator_dir}/vimperator-plugins
 ret_code=$?;
 if [ $ret_code != 0 ]; then
     echo "Failed to clone vimperator-plugins. error code: $ret_code";
     exit;
 fi
 echo 'Checkout for latest Fx version...';
-pushd ~/.vimperator/vimperator-plugins
+pushd ~/${vimperator_dir}/vimperator-plugins
 git checkout 3.6
 git pull origin
 popd
@@ -42,12 +50,6 @@ if [ ! $? ]; then
 fi
 
 echo 'Setting local rc files...';
-
-if [ `uname` = "Darwin" ] || [ `uname` = "Linux" ]; then
-    pref='.';
-else
-    pref='_';
-fi
 
 cwd=$(python pwd.py);
 
