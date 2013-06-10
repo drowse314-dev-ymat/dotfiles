@@ -40,6 +40,9 @@ echo 'Checkout for latest Fx version...';
 pushd ~/${vimperator_dir}/vimperator-plugins
 git checkout 3.6
 git pull origin
+echo 'Create symlink of plugin_loader.js...'
+mkdir ~/${vimperator_dir}/plugin;
+ln -s ~/${vimperator_dir}/vimperator-plugins/plugin_loader.js ~/${vimperator_dir}/plugin/plugin_loader.js
 popd
 
 echo 'Generate _gvimrc';
