@@ -15,6 +15,7 @@ if has('vim_starting')
     call neobundle#rc(expand('~/vim_share/bundle'))
 endif
 " plugins
+let g:neobundle_default_git_protocol='https'
 NeoBundle 'Shougo/neobundle.vim.git'
 NeoBundle 'scrooloose/nerdtree.git'
 NeoBundle 'Shougo/neocomplcache.git'

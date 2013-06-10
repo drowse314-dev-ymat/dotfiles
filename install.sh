@@ -14,7 +14,7 @@ fi
 mkdir ~/.vimperator;
 
 echo 'Cloning NeoBundle...';
-git clone git://github.com/Shougo/neobundle.vim ~/vim_share/bundle/neobundle.vim
+git clone https://github.com/Shougo/neobundle.vim.git ~/vim_share/bundle/neobundle.vim
 ret_code=$?;
 if [ $ret_code != 0 ]; then
     echo "Failed to clone NeoBundle. error code: $ret_code";
