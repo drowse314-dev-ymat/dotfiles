@@ -57,6 +57,12 @@ qmark f http://www.facebook.com/
 qmark p http://docs.python.org/
 qmark j http://python-doc-ja.readthedocs.org/
 
+
+"================plugin------
+let g:plugin_loader_roots = "~/.vimperator/vimperator-plugins/ ~/.vimperator/load/"
+let g:plugin_loader_plugins = "_libly,appendAnchor,multi_requester,alert,buffer-multiple-hints,PDF.js,tabsort"
+
+
 "================others------
 set toolbars=noaddons,nobookmarks,nomenu,navigation,tabs
 set titlestring="Web"

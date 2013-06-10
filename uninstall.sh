@@ -1,5 +1,7 @@
 echo 'Delete directory "~/vim_share"...';
 rm -rf ~/vim_share;
+echo 'Delete directory "~/.vimperator/vimperator-plugins"...';
+rm -rf ~/.vimperator/vimperator-plugins;
 echo 'Delete "~/_vimrc" or "~/.vimrc"...';
 rm -i ~/_vimrc;
 rm -i ~/.vimrc;

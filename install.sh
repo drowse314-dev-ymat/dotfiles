@@ -11,6 +11,7 @@ if [ ! $? ]; then
     echo 'Failed to make directory: ~/vim_share/bundle';
     exit;
 fi
+mkdir ~/.vimperator;
 
 echo 'Cloning NeoBundle...';
 git clone git://github.com/Shougo/neobundle.vim ~/vim_share/bundle/neobundle.vim
@@ -19,6 +20,19 @@ if [ $ret_code != 0 ]; then
     echo "Failed to clone NeoBundle. error code: $ret_code";
     exit;
 fi
+
+echo 'Cloning vimperator-plugins...';
+git clone https://github.com/vimpr/vimperator-plugins.git ~/.vimperator/vimperator-plugins
+ret_code=$?;
+if [ $ret_code != 0 ]; then
+    echo "Failed to clone vimperator-plugins. error code: $ret_code";
+    exit;
+fi
+echo 'Checkout for latest Fx version...';
+pushd ~/.vimperator/vimperator-plugins
+git checkout 3.6
+git pull origin
+popd
 
 echo 'Generate _gvimrc';
 python gen_gvimrc.py _vimrc;
