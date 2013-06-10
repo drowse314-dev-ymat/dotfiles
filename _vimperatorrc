@@ -1,12 +1,7 @@
-"3.1 (created: 2011/04/21 21:46:34)
-
-
 "================Keymaps------
 "tab shift------
 noremap h <C-n><Esc>
 noremap l <C-p><Esc>
-"tabmove------
-noremap mt :tabmove<Space>
 "horizontal------
 noremap <C-h> h
 noremap <C-l> l
@@ -17,9 +12,6 @@ noremap J <C-d>
 noremap K <C-u>
 "reloadme------
 noremap <C-r> :mapc<CR>:cmapc<CR>:imapc<CR>:source<Space>~/.vimperatorrc<CR>
-"?------
-noremap <C-o> :js<Space>alert("Hey!")<CR>
-noremap <C-s> :javascript<Space>
 "visual mode------
 vmap <C-j> <Down>
 vmap <C-k> <Up>
