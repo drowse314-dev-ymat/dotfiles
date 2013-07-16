@@ -23,6 +23,8 @@ NeoBundle 'Shougo/neosnippet.git'
 NeoBundle 'ciaranm/inkpot.git'
 NeoBundle 'jnurmine/Zenburn.git'
 NeoBundle 'derekwyatt/vim-scala.git'
+NeoBundle 'vim-scripts/BusyBee.git'
+NeoBundle 'vim-scripts/jellybeans.vim.git'
 " ++++++++++++++
 " --theNERDTree++++++++++
 nmap <Leader>t :NERDTreeToggle<CR>
@@ -72,6 +74,8 @@ colorscheme inkpot
 noremap <expr><S-t> ":let g:zenburn_high_Contrast=0<CR> :colorscheme zenburn<CR>"
 noremap <expr><S-y> ":let g:zenburn_high_Contrast=1<CR> :colorscheme zenburn<CR>"
 noremap <expr><C-c> ":colorscheme inkpot<CR>"
+noremap <expr><S-j> ":colorscheme jellybeans<CR>"
+noremap <expr><S-b> ":colorscheme BusyBee<CR>"
 
 " ----edit
 set backspace=indent,eol,start
