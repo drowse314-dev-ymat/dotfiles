@@ -69,7 +69,7 @@ set tabstop=8
 filetype plugin on
 " color settings
 set t_Co=256
-colorscheme inkpot
+colorscheme jellybeans
 " dynamic colors
 noremap <expr><S-t> ":let g:zenburn_high_Contrast=0<CR> :colorscheme zenburn<CR>"
 noremap <expr><S-y> ":let g:zenburn_high_Contrast=1<CR> :colorscheme zenburn<CR>"
