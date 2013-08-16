@@ -12,6 +12,7 @@ set-option -g status-interval 5
 # Options
 set-option -g base-index 1
 set-option -g default-shell /bin/zsh
+set-option -g history-limit 10000
 
 # Keybinds
 bind-key Tab select-pane -t:.+
