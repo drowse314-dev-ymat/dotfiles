@@ -25,6 +25,10 @@ NeoBundle 'jnurmine/Zenburn.git'
 NeoBundle 'derekwyatt/vim-scala.git'
 NeoBundle 'vim-scripts/BusyBee.git'
 NeoBundle 'vim-scripts/jellybeans.vim.git'
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'itchyny/landscape.vim'
+NeoBundle 'itchyny/lightline.vim'
+NeoBundle 'vim-scripts/pdftotext.git'
 " ++++++++++++++
 " --theNERDTree++++++++++
 nmap <Leader>t :NERDTreeToggle<CR>
@@ -37,6 +41,77 @@ inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
 " <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 set completeopt-=preview
+" ++++++++++
+" --lightline.vim++++++++++
+let g:lightline = {
+\    'colorscheme': 'jellybeans',
+\    'active': {
+\        'left': [
+\            ['mode', 'paste'],
+\            ['fugitive', 'filename'],
+\        ],
+\        'right': [
+\            ['lineinfo'],
+\            ['percent'],
+\            ['fileformat', 'fileencoding', 'filetype'],
+\        ],
+\    },
+\    'component_function': {
+\        'mode': 'MyMode',
+\        'fugitive': 'MyFugitive',
+\        'filename': 'MyFilename',
+\        'fileformat': 'MyFileformat',
+\        'fileencoding': 'MyFileencoding',
+\        'filetype': 'MyFiletype',
+\    },
+\    'subseparator': {'left': '⮁', 'right': '⮃'},
+\}
+
+function! MyMode()
+    let fname = expand('%:t')
+    return fname =~ 'NERD_tree.*' ? ' NERDTree ' :
+        \ winwidth('.') > 60 ? ' ' . lightline#mode() . ' ' : ''
+endfunction
+
+function! MyFugitive()
+    try
+        if expand('%:t') !~? 'NERD' && exists('*fugitive#head')
+            let mark = '⭠ '
+            let _ = fugitive#head()
+            return strlen(_) ? mark._ : ''
+        endif
+    catch
+    endtry
+    return ''
+endfunction
+
+function! MyFilename()
+    let fname = expand('%:t')
+    return fname =~ 'NERD_tree.*' ? '' :
+        \ ('' != MyReadonly() ? MyReadonly() . ' ' : '') .
+        \ ('' != fname ? fname : '[-]') .
+        \ ('' != MyModified() ? ' ' . MyModified() : '')
+endfunction
+
+function! MyReadonly()
+    return &ft !~? 'help' && &readonly ? '⭤' : ''
+endfunction
+
+function! MyModified()
+    return &ft =~ 'help' ? '' : &modified ? '+' : &modifiable ? '' : '-'
+endfunction
+
+function! MyFileformat()
+  return winwidth('.') > 70 ? &fileformat : ''
+endfunction
+
+function! MyFileencoding()
+  return winwidth('.') > 70 ? (strlen(&fenc) ? &fenc : &enc) : ''
+endfunction
+
+function! MyFiletype()
+  return winwidth('.') > 70 ? (strlen(&filetype) ? &filetype : 'none') : ''
+endfunction
 " ++++++++++
 
 
@@ -76,6 +151,7 @@ noremap <expr><S-y> ":let g:zenburn_high_Contrast=1<CR> :colorscheme zenburn<CR>
 noremap <expr><C-c> ":colorscheme inkpot<CR>"
 noremap <expr><S-j> ":colorscheme jellybeans<CR>"
 noremap <expr><S-b> ":colorscheme BusyBee<CR>"
+noremap <expr><C-l> ":colorscheme landscape<CR>"
 
 " ----edit
 set backspace=indent,eol,start
