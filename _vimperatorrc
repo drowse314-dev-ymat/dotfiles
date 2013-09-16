@@ -61,6 +61,17 @@ qmark j http://python-doc-ja.readthedocs.org/
 "================plugin------
 let g:plugin_loader_roots = "~/.vimperator/vimperator-plugins/ ~/vimperator/vimperator-plugins/"
 let g:plugin_loader_plugins = "_libly,appendAnchor,multi_requester,alert,buffer-multiple-hints,PDF.js,tabsort"
+"+++ for multi_requester +++
+javascript <<EOM
+commands.addUserCommand(
+    ["we[blio]"],
+    'Shortcut for ":mr weblio-ejje"',
+    function(args) {
+        liberator.execute("mr weblio-ejje '" + args.join(" ") + "'");
+    }
+);
+EOM
+"+++++++++++++++++++++++++++
 
 
 "================others------
