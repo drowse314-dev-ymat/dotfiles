@@ -19,7 +19,6 @@ let g:neobundle_default_git_protocol='https'
 NeoBundle 'Shougo/neobundle.vim.git'
 NeoBundle 'scrooloose/nerdtree.git'
 NeoBundle 'Shougo/neocomplcache.git'
-NeoBundle 'Shougo/neosnippet.git'
 NeoBundle 'ciaranm/inkpot.git'
 NeoBundle 'jnurmine/Zenburn.git'
 NeoBundle 'derekwyatt/vim-scala.git'
@@ -29,6 +28,7 @@ NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'itchyny/landscape.vim'
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'vim-scripts/pdftotext.git'
+NeoBundle 'mattn/emmet-vim.git'
 " ++++++++++++++
 " --theNERDTree++++++++++
 nmap <Leader>t :NERDTreeToggle<CR>
@@ -36,10 +36,10 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 " ++++++++++
 " --Neocomplcache++++++++++
 let g:neocomplcache_enable_at_startup = 1
-" <CR>: close popup and save indent.
-inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
+let g:neocomplcache_enable_smart_case = 1
 " <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<TAB>"
 set completeopt-=preview
 " ++++++++++
 " --lightline.vim++++++++++
@@ -112,6 +112,11 @@ endfunction
 function! MyFiletype()
   return winwidth('.') > 70 ? (strlen(&filetype) ? &filetype : 'none') : ''
 endfunction
+" ++++++++++
+" --emmet-vim++++++++++
+let g:user_emmet_settings = {
+\    'lang': 'ja',
+\}
 " ++++++++++
 
 
