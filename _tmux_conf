@@ -8,6 +8,9 @@ set-option -g window-status-current-fg colour250
 set-option -g window-status-current-attr underscore
 set-option -g pane-active-border-fg colour240
 set-option -g status-interval 5
+# Screen saver
+set -g lock-after-time 300
+set -g lock-command "cmatrix -a -b -s"
 
 # Options
 set-option -g base-index 1
