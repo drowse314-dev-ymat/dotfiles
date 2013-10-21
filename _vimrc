@@ -31,6 +31,8 @@ NeoBundle 'itchyny/landscape.vim'
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'vim-scripts/pdftotext.git'
 NeoBundle 'mattn/emmet-vim.git'
+NeoBundle 'elzr/vim-json.git'
+NeoBundle 'kchmck/vim-coffee-script.git'
 " ++++++++++++++
 " --theNERDTree++++++++++
 nmap <Leader>t :NERDTreeToggle<CR>
