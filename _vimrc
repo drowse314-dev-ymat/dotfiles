@@ -3,6 +3,8 @@
 set nocompatible
 " ~@vimonly
 set nobackup
+set writebackup
+set backupcopy=yes
 set autoread
 
 
