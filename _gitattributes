@@ -1,0 +1,6 @@
+*.cs diff=csharp
+*.html diff=html
+*.java diff=java
+*.php diff=php
+*.py diff=python
+*.rb diff=ruby

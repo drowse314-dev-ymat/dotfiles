@@ -1,0 +1,10 @@
+[core]
+    autocrlf = false
+    attributesfile = ./_gitattributes
+[color]
+    ui = true
+    diff = true
+[user]
+    email = drowse314@gmail.com
+[url "https://"]
+    insteadOf = git://
