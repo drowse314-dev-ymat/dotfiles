@@ -168,10 +168,20 @@ noremap <expr><C-o> ":colorscheme sorcerer<CR>"
 set backspace=indent,eol,start
 set expandtab
 set showmatch
+" for tab width
+function! MyTabWidth()
+    let shorttab = ['ruby', 'html']
+    if (index(shorttab, &filetype) > -1)
+        let tabwidth = 2
+    else
+        let tabwidth = 4
+    endif
+    return tabwidth
+endfunction
 " <tab> is replced with spaces:
-set softtabstop=4
+autocmd FileType * execute 'set softtabstop=' . MyTabWidth()
 " in auto-mode
-set shiftwidth=4
+autocmd FileType * execute 'set shiftwidth=' . MyTabWidth()
 set noautoindent
 set nosmartindent
 
