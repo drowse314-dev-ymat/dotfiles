@@ -6,6 +6,7 @@ set nobackup
 set writebackup
 set backupcopy=yes
 set autoread
+set ttyfast
 
 
 " ---- extensions
@@ -131,6 +132,7 @@ set wildmenu
 set showcmd
 set visualbell
 set hidden
+set lazyredraw
 " --search
 set hlsearch
 set wrapscan
@@ -148,6 +150,8 @@ set cursorcolumn
 set laststatus=2
 set statusline=%<%t\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%lL/%L:%cC%V%8P
 set title
+" for unicodes
+set ambiwidth=double
 " <tab> width in view
 set tabstop=8
 " change schemes by filetype
