@@ -33,6 +33,7 @@ NeoBundle 'vim-scripts/pdftotext.git'
 NeoBundle 'mattn/emmet-vim.git'
 NeoBundle 'elzr/vim-json.git'
 NeoBundle 'kchmck/vim-coffee-script.git'
+NeoBundle 'vim-scripts/Sorcerer.git'
 " ++++++++++++++
 " --theNERDTree++++++++++
 nmap <Leader>t :NERDTreeToggle<CR>
@@ -161,6 +162,7 @@ noremap <expr><C-c> ":colorscheme inkpot<CR>"
 noremap <expr><S-j> ":colorscheme jellybeans<CR>"
 noremap <expr><S-b> ":colorscheme BusyBee<CR>"
 noremap <expr><C-l> ":colorscheme landscape<CR>"
+noremap <expr><C-o> ":colorscheme sorcerer<CR>"
 
 " ----edit
 set backspace=indent,eol,start
