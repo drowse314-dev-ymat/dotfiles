@@ -194,6 +194,22 @@ nmap gx <Plug>NetrwBrowseX
 nnoremap <silent> <Plug>NetrwBrowseX :call netrw#NetrwBrowseX(expand("<cWORD>"),0)
 nnoremap j gj
 nnoremap k gk
+nnoremap tn :tabnew<CR>
+" for moving tab
+function! CurrentTabToLast()
+    let current = tabpagenr()
+    let to_move = bufname('%')
+    execute 'tabmove ' . tabpagenr('$')
+    execute 'normal ' . current . 'gt'
+    redraw
+    echomsg 'moved to last: "' . to_move . '".'
+endfunction
+nnoremap tl :call CurrentTabToLast()<CR>
+command -nargs=1 ReadableTabMove :execute 'tabmove ' . (<args>-1)
+nnoremap tm :execute "ReadableTabMove "<Space>.<Space>
+" for switching tab
+set swb=usetab
+nnoremap tb :sb<Space>
 
 
 if &cp | set nocp | endif
