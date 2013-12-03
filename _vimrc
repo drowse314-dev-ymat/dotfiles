@@ -39,6 +39,7 @@ NeoBundle 'vim-scripts/Sorcerer.git'
 " --theNERDTree++++++++++
 nmap <Leader>t :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+nnoremap tr :NERDTree<Space>
 " ++++++++++
 " --Neocomplcache++++++++++
 let g:neocomplcache_enable_at_startup = 1
