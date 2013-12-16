@@ -1,55 +1,84 @@
-" @vimonly
-" General options.
+" ================
+" Program options.
+" ================
 set nocompatible
-" ~@vimonly
+set visualbell
+set title
+set viminfo='20,\"50
+" loading etc.
+set autoread
+set ttyfast
+set lazyredraw
+set hidden
+" backup
 set nobackup
 set writebackup
 set backupcopy=yes
-set autoread
-set ttyfast
 
+" ===========
+" Extensions.
+" ===========
 
-" ---- extensions
-" --neobundle++++++++++
-filetype off
-filetype plugin indent off
+" ++++++++++++
+" >> NeoBundle
+" ++++++++++++
 if has('vim_starting')
     set runtimepath+=~/vim_share/bundle/neobundle.vim/
-    call neobundle#rc(expand('~/vim_share/bundle'))
 endif
-" plugins
+call neobundle#rc(expand('~/vim_share/bundle'))
 let g:neobundle_default_git_protocol='https'
+" general
 NeoBundle 'Shougo/neobundle.vim.git'
 NeoBundle 'scrooloose/nerdtree.git'
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'vim-scripts/pdftotext.git'
+NeoBundle 'mattn/benchvimrc-vim.git'
+" edit
 NeoBundle 'Shougo/neocomplcache.git'
+NeoBundle 'mattn/emmet-vim.git'
+" colors & appearance
 NeoBundle 'ciaranm/inkpot.git'
 NeoBundle 'jnurmine/Zenburn.git'
-NeoBundle 'derekwyatt/vim-scala.git'
 NeoBundle 'vim-scripts/BusyBee.git'
 NeoBundle 'vim-scripts/jellybeans.vim.git'
-NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'itchyny/landscape.vim'
+NeoBundle 'vim-scripts/Sorcerer.git'
 NeoBundle 'itchyny/lightline.vim'
-NeoBundle 'vim-scripts/pdftotext.git'
-NeoBundle 'mattn/emmet-vim.git'
+" syntax
+NeoBundle 'derekwyatt/vim-scala.git'
 NeoBundle 'elzr/vim-json.git'
 NeoBundle 'kchmck/vim-coffee-script.git'
-NeoBundle 'vim-scripts/Sorcerer.git'
+filetype plugin indent on
+" ++++++++++++
+" << NeoBundle
+" ++++++++++++
+
 " ++++++++++++++
-" --theNERDTree++++++++++
+" >> theNERDTree
+" ++++++++++++++
 nmap <Leader>t :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 nnoremap tr :NERDTree<Space>
-" ++++++++++
-" --Neocomplcache++++++++++
+" ++++++++++++++
+" << theNERDTree
+" ++++++++++++++
+
+" ++++++++++++++++
+" >> Neocomplcache
+" ++++++++++++++++
 let g:neocomplcache_enable_at_startup = 1
 let g:neocomplcache_enable_smart_case = 1
 " <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<TAB>"
 set completeopt-=preview
-" ++++++++++
-" --lightline.vim++++++++++
+" ++++++++++++++++
+" << Neocomplcache
+" ++++++++++++++++
+
+" ++++++++++++++++
+" >> lightline.vim
+" ++++++++++++++++
 let g:lightline = {
 \    'colorscheme': 'jellybeans',
 \    'active': {
@@ -119,45 +148,62 @@ endfunction
 function! MyFiletype()
   return winwidth('.') > 70 ? (strlen(&filetype) ? &filetype : 'none') : ''
 endfunction
-" ++++++++++
-" --emmet-vim++++++++++
+
+" always show status line
+set laststatus=2
+" ++++++++++++++++
+" << lightline.vim
+" ++++++++++++++++
+
+" ++++++++++++
+" >> emmet-vim
+" ++++++++++++
 let g:user_emmet_settings = {
 \    'lang': 'ja',
 \}
-" ++++++++++
+" ++++++++++++
+" << emmet-vim
+" ++++++++++++
 
-
-" CUI options.
-" --cmdline
+" =====================
+" Command line options.
+" =====================
+set history=50
+" commands etc.
 set wildmenu
 set showcmd
-set visualbell
-set hidden
-set lazyredraw
-" --search
+" search
 set hlsearch
 set wrapscan
 set incsearch
 set ignorecase
 set smartcase
 
-" ----UI
+" ===========
+" UI options.
+" ===========
+
 syntax enable
-" line number & ruler
+" line number & ruler, etc.
 set number
 set ruler
 set cursorline
 set cursorcolumn
-set laststatus=2
-set statusline=%<%t\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%lL/%L:%cC%V%8P
-set title
+set guicursor=n-v-c:block,o:hor50,i-ci:hor15,r-cr:hor30,sm:block,a:blinkon0
+
+" >> rendering
+" ++++++++++++
+set showmatch
 " for unicodes
 set ambiwidth=double
+set fileencodings=ucs-bom,utf-8,iso-2022-jp,euc-jp,shift-jis,cp932,latin1
 " <tab> width in view
 set tabstop=8
-" change schemes by filetype
-filetype plugin on
-" color settings
+" ++++++++++++
+" << rendering
+
+" >> color settings
+" +++++++++++++++++
 set t_Co=256
 colorscheme jellybeans
 " dynamic colors
@@ -168,11 +214,13 @@ noremap <expr><S-j> ":colorscheme jellybeans<CR>"
 noremap <expr><S-b> ":colorscheme BusyBee<CR>"
 noremap <expr><C-l> ":colorscheme landscape<CR>"
 noremap <expr><C-o> ":colorscheme sorcerer<CR>"
+" +++++++++++++++++
+" << color settings
 
-" ----edit
+" >> edit
+" +++++++
 set backspace=indent,eol,start
 set expandtab
-set showmatch
 " for tab width
 function! MyTabWidth()
     let shorttab = ['ruby', 'html']
@@ -189,13 +237,20 @@ autocmd FileType * execute 'set softtabstop=' . MyTabWidth()
 autocmd FileType * execute 'set shiftwidth=' . MyTabWidth()
 set noautoindent
 set nosmartindent
+" +++++++
+" << edit
 
-" ---- keybinds
-nmap gx <Plug>NetrwBrowseX
-nnoremap <silent> <Plug>NetrwBrowseX :call netrw#NetrwBrowseX(expand("<cWORD>"),0)
+" ===============
+" Other Keybinds.
+" ===============
+
 nnoremap j gj
 nnoremap k gk
+
+" << Tabpages
+" +++++++++++
 nnoremap tn :tabnew<CR>
+
 " for moving tab
 function! CurrentTabToLast()
     let current = tabpagenr()
@@ -206,20 +261,17 @@ function! CurrentTabToLast()
     echomsg 'moved to last: "' . to_move . '".'
 endfunction
 nnoremap tl :call CurrentTabToLast()<CR>
-command -nargs=1 ReadableTabMove :execute 'tabmove ' . (<args>-1)
+
+function! MoveTabToVisualIndex(index)
+    let index = a:index - 1
+    execute 'tabmove ' . index
+endfunction
+command! -nargs=1 ReadableTabMove :call MoveTabToVisualIndex(<args>)
 nnoremap tm :execute "ReadableTabMove "<Space>.<Space>
+
 " for switching tab
 set swb=usetab
 nnoremap tb :sb<Space>
+" +++++++++++
+" << Tabpages
 
-
-if &cp | set nocp | endif
-let s:cpo_save=&cpo
-set cpo&vim
-let &cpo=s:cpo_save
-unlet s:cpo_save
-set fileencodings=ucs-bom,utf-8,latin1
-set guicursor=n-v-c:block,o:hor50,i-ci:hor15,r-cr:hor30,sm:block,a:blinkon0
-set helplang=ja
-set history=50
-set viminfo='20,\"50
