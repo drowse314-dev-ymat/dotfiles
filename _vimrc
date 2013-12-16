@@ -275,3 +275,7 @@ nnoremap tb :sb<Space>
 " +++++++++++
 " << Tabpages
 
+" ==============
+" Site settings.
+" ==============
+source ~/site_vimrc

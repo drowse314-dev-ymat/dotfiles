@@ -124,3 +124,8 @@ esac
 # rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
+
+" ==============
+" Site settings.
+" ==============
+source ~/site_zshrc

@@ -83,3 +83,7 @@ set editor=notepad -f
 set visualbell=true
 highlight Bell display:none
 
+" ==============
+" Site settings.
+" ==============
+source ~/site_vimperatorrc
