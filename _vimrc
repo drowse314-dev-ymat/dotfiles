@@ -56,9 +56,9 @@ filetype plugin indent on
 " ++++++++++++++
 " >> theNERDTree
 " ++++++++++++++
-nmap <Leader>t :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-nnoremap tr :NERDTree<Space>
+nnoremap tr :NERDTreeToggle<CR>
+nnoremap tp :NERDTree<Space>
 " ++++++++++++++
 " << theNERDTree
 " ++++++++++++++
