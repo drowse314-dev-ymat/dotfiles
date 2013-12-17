@@ -48,6 +48,7 @@ NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'derekwyatt/vim-scala.git'
 NeoBundle 'elzr/vim-json.git'
 NeoBundle 'kchmck/vim-coffee-script.git'
+NeoBundle 'majutsushi/tagbar.git'
 filetype plugin indent on
 " ++++++++++++
 " << NeoBundle
@@ -164,6 +165,20 @@ let g:user_emmet_settings = {
 " ++++++++++++
 " << emmet-vim
 " ++++++++++++
+
+" +++++++++
+" >> Tagbar
+" +++++++++
+let g:tagbar_autofocus = 1
+let g:tagbar_autoshowtag = 1
+"let g:tagbar_compact = 1
+let g:tagbar_iconchars = ['<>', '<->']
+let g:tagbar_map_jump = '<C-j>'
+let g:tagbar_width = 35
+nnoremap tgb :TagbarToggle<CR>
+" +++++++++
+" << Tagbar
+" +++++++++
 
 " =====================
 " Command line options.
