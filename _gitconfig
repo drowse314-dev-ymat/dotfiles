@@ -3,6 +3,20 @@
     attributesfile = ./_gitattributes
 [color]
     ui = true
-    diff = true
+[color "branch"]
+    current = red
+    local = yellow
+    remote = green
+[color "diff"]
+    meta = cyan
+    frag = magenta
+    old = red bold
+    new = green bold
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan
 [url "https://"]
     insteadOf = git://
+[diff]
+    algorithm = histogram
