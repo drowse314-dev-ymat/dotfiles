@@ -212,10 +212,19 @@ set smartcase
 syntax enable
 " line number & ruler, etc.
 set number
+function! ToggleRelativeNumber()
+    if &number
+        set relativenumber
+    else
+        set number
+    endif
+endfunction
+nnoremap <leader>n :call ToggleRelativeNumber()<CR>
 set ruler
 set cursorline
 set cursorcolumn
 set guicursor=n-v-c:block,o:hor50,i-ci:hor15,r-cr:hor30,sm:block,a:blinkon0
+set scrolloff=3
 
 " >> rendering
 " ++++++++++++
