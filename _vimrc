@@ -33,6 +33,7 @@ NeoBundle 'scrooloose/nerdtree.git'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'vim-scripts/pdftotext.git'
 NeoBundle 'mattn/benchvimrc-vim.git'
+NeoBundle 'kien/ctrlp.vim.git'
 " edit
 NeoBundle 'Shougo/neocomplcache.git'
 NeoBundle 'mattn/emmet-vim.git'
@@ -167,6 +168,16 @@ let g:user_emmet_settings = {
 " ++++++++++++
 
 " +++++++++
+" >> Ctrl-P
+" +++++++++
+nnoremap tb :CtrlPBuffer<CR>
+let g:ctrlp_map = '<Nop>'
+let g:ctrlp_working_path_mode = 'ra'
+" +++++++++
+" << Ctrl-P
+" +++++++++
+
+" +++++++++
 " >> Tagbar
 " +++++++++
 let g:tagbar_autofocus = 1
@@ -286,7 +297,6 @@ nnoremap tm :execute "ReadableTabMove "<Space>.<Space>
 
 " for switching tab
 set swb=usetab
-nnoremap tb :sb<Space>
 " +++++++++++
 " << Tabpages
 
