@@ -117,15 +117,7 @@ kterm*|xterm*|)
     ;;
 esac
 
-# ----------------
-# Other
-# ----------------
-
-# rbenv
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-
-" ==============
-" Site settings.
-" ==============
+# ==============
+# Site settings.
+# ==============
 source ~/site_zshrc
