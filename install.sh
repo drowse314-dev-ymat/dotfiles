@@ -20,7 +20,7 @@ function file_exists() {
 }
 
 ## File & directory paths.
-CWD=$(python pwd.py)
+CWD=`pwd`
 PREF='.'
 SOURCE_PREF='_'
 # vim
