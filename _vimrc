@@ -225,6 +225,7 @@ set cursorline
 set cursorcolumn
 set guicursor=n-v-c:block,o:hor50,i-ci:hor15,r-cr:hor30,sm:block,a:blinkon0
 set scrolloff=3
+nnoremap <C-p> :echo expand('%:p')<CR>
 
 " >> rendering
 " ++++++++++++
@@ -282,6 +283,7 @@ set nosmartindent
 
 nnoremap j gj
 nnoremap k gk
+nnoremap <Tab> %
 
 " << Tabpages
 " +++++++++++
