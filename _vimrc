@@ -223,6 +223,7 @@ set showmatch
 " for unicodes
 set ambiwidth=double
 set fileencodings=ucs-bom,utf-8,iso-2022-jp,euc-jp,shift-jis,cp932,latin1
+set fileformats=unix,dos,mac
 " <tab> width in view
 set tabstop=8
 " ++++++++++++
