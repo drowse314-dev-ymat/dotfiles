@@ -293,6 +293,9 @@ nnoremap j gj
 nnoremap k gk
 nnoremap <Tab> %
 inoremap <C-@> <C-[>
+nnoremap <C-e> <Esc>
+inoremap <C-e> <Esc>
+vnoremap <C-e> <Esc>
 
 " << Tabpages
 " +++++++++++
