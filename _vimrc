@@ -292,6 +292,7 @@ set nosmartindent
 nnoremap j gj
 nnoremap k gk
 nnoremap <Tab> %
+inoremap <C-@> <C-[>
 
 " << Tabpages
 " +++++++++++
