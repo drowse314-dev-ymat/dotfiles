@@ -172,6 +172,14 @@ let g:user_emmet_settings = {
 " +++++++++
 nnoremap tb :CtrlPBuffer<CR>
 let g:ctrlp_map = '<Nop>'
+let g:ctrlp_match_window = 'bottom,order:ttb,min:6,max:' . &lines
+let g:ctrlp_prompt_mappings = {
+    \ 'AcceptSelection("t")': ['<C-o>'],
+    \ 'OpenMulti()':          ['<C-m>'],
+    \ 'PrtExit()':            ['<esc>', '<c-c>', '<C-e>'],
+    \ 'PrtCurEnd()':          ['<c-g>'],
+\}
+let g:ctrlp_switch_buffer = 1
 let g:ctrlp_working_path_mode = 'ra'
 " +++++++++
 " << Ctrl-P
