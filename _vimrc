@@ -82,42 +82,83 @@ set completeopt-=preview
 " ++++++++++++++++
 " >> lightline.vim
 " ++++++++++++++++
-let g:lightline = {
-\    'colorscheme': 'jellybeans',
-\    'active': {
-\        'left': [
-\            ['mode', 'paste'],
-\            ['fugitive', 'filename'],
-\        ],
-\        'right': [
-\            ['lineinfo'],
-\            ['percent'],
-\            ['fileformat', 'fileencoding', 'filetype'],
-\        ],
-\    },
-\    'component_function': {
-\        'mode': 'MyMode',
-\        'fugitive': 'MyFugitive',
-\        'filename': 'MyFilename',
-\        'fileformat': 'MyFileformat',
-\        'fileencoding': 'MyFileencoding',
-\        'filetype': 'MyFiletype',
-\    },
-\    'subseparator': {'left': '⮁', 'right': '⮃'},
+let g:lightline = {}
+let g:lightline.colorscheme = 'jellybeans'
+let g:lightline.active = {}
+let g:lightline.inactive = {}
+let g:lightline.active.left = [
+\    ['mode', 'paste'],
+\    ['fugitive', 'filename'],
+\    ['ctrlpmark'],
+\]
+let g:lightline.active.right = [
+\    ['lineinfo'],
+\    ['percent'],
+\    ['fileformat', 'fileencoding', 'filetype'],
+\]
+let g:lightline.inactive.left = [
+\    ['mode'],
+\    ['fugitive', 'filename'],
+\]
+let g:lightline.inactive.right = g:lightline.active.right
+let g:lightline.subseparator = {'left': '⮁', 'right': '⮃'}
+let g:lightline.tabline = {}
+let g:lightline.tabline.right = [
+\    ['cwd'],
+\    ['bufdir'],
+\    ['lines'],
+\]
+let g:lightline.tab = {'active': ['tabnr', 'filename']}
+let g:lightline.tab.inactive = g:lightline.tab.active
+let g:lightline.component_function = {
+\    'mode': 'MyMode',
+\    'fugitive': 'MyFugitive',
+\    'filename': 'MyFilename',
+\    'lineinfo': 'MyLineInfo',
+\    'percent': 'MyPercent',
+\    'fileformat': 'MyFileformat',
+\    'fileencoding': 'MyFileencoding',
+\    'filetype': 'MyFiletype',
+\    'ctrlpmark': 'CtrlPMark',
+\    'lines': 'MyLines',
+\    'cwd': 'MyCWD',
+\    'bufdir': 'MyBufDir',
+\}
+let g:lightline.tab_component_function = {
+\    'tabnr': 'MyTabnr',
+\    'filename': 'MyTabname',
 \}
 
+function! MyModeDetect(fname)
+    return a:fname == '__Tagbar__' ? 'tagbar' :
+         \ a:fname == 'ControlP' ? 'ctrlp' :
+         \ a:fname == '[Command Line]' ? 'cmd' :
+         \ a:fname =~ 'NERD_tree.*' ? 'nerd' :
+         \ a:fname != '' ? 'file' :
+         \ 'blank'
+endfunction
+
 function! MyMode()
-    let fname = expand('%:t')
-    return fname =~ 'NERD_tree.*' ? ' NERDTree ' :
-        \ winwidth('.') > 60 ? ' ' . lightline#mode() . ' ' : ''
+    let l:modestr = {
+    \    'tagbar': ' Tagbar ',
+    \    'ctrlp': ' CtrlP ',
+    \    'nerd': 'NERDTree',
+    \}
+    let l:mode = MyModeDetect(expand('%:t'))
+    return has_key(l:modestr, l:mode) ? l:modestr[l:mode] :
+         \ winwidth('.') > 60 ? ' ' . lightline#mode() . ' ' : ''
 endfunction
 
 function! MyFugitive()
+    let l:mode = MyModeDetect(expand('%:t'))
     try
-        if expand('%:t') !~? 'NERD' && exists('*fugitive#head')
-            let mark = '⭠ '
-            let _ = fugitive#head()
-            return strlen(_) ? mark._ : ''
+        if l:mode != 'nerd' &&
+             \ l:mode != 'tagbar' &&
+             \ l:mode != 'ctrlp' &&
+             \ exists('*fugitive#head')
+            let l:mark = '⭠ '
+            let l:branch = fugitive#head()
+            return strlen(l:branch) ? l:mark . l:branch : ''
         endif
     catch
     endtry
@@ -125,11 +166,22 @@ function! MyFugitive()
 endfunction
 
 function! MyFilename()
-    let fname = expand('%:t')
-    return fname =~ 'NERD_tree.*' ? '' :
-        \ ('' != MyReadonly() ? MyReadonly() . ' ' : '') .
-        \ ('' != fname ? fname : '[-]') .
-        \ ('' != MyModified() ? ' ' . MyModified() : '')
+    let l:fname = expand('%:t')
+    let l:mode = MyModeDetect(l:fname)
+    let l:sp_bufname = {
+    \    'tagbar': '',
+    \    'nerd': '',
+    \}
+    let l:bufname = {
+    \    'cmd': '⚙',
+    \    'file': fnamemodify(l:fname, ':t'),
+    \    'blank': '☄ ',
+    \}
+    return l:mode == 'ctrlp' ? g:lightline.ctrlp_item :
+         \ has_key(l:sp_bufname, l:mode) ? l:sp_bufname[l:mode] :
+         \ ('' != MyReadonly() ? MyReadonly() . ' ' : '') .
+         \ l:bufname[l:mode] .
+         \ ('' != MyModified() ? ' ' . MyModified() : '')
 endfunction
 
 function! MyReadonly()
@@ -138,6 +190,16 @@ endfunction
 
 function! MyModified()
     return &ft =~ 'help' ? '' : &modified ? '+' : &modifiable ? '' : '-'
+endfunction
+
+function! MyLineInfo()
+    return '⭡ ' . line('.') . ':' . col('.')
+endfunction
+
+function! MyPercent()
+    let l:selection = {'pos': '⌖ ', 'at': '﹫'}
+    let l:percent = float2nr(100 * line('.') / line('$'))
+    return l:selection.pos . l:percent . '%'
 endfunction
 
 function! MyFileformat()
@@ -149,11 +211,100 @@ function! MyFileencoding()
 endfunction
 
 function! MyFiletype()
-  return winwidth('.') > 70 ? (strlen(&filetype) ? &filetype : 'none') : ''
+  return winwidth('.') > 70 ? (strlen(&filetype) ? &filetype : 'φ ') : ''
+endfunction
+
+let g:tagbar_status_func = 'TagbarStatusFunc'
+function! TagbarStatusFunc(current, sort, fname, ...) abort
+    let g:lightline.fname = a:fname
+   return lightline#statusline(0)
+endfunction
+
+function! CtrlPMark()
+    if MyModeDetect(expand('%:t')) == 'ctrlp'
+        call lightline#link('iR'[g:lightline.ctrlp_regex])
+        return lightline#concatenate([g:lightline.ctrlp_prev,
+                                    \ g:lightline.ctrlp_item,
+                                    \ g:lightline.ctrlp_next], 0)
+    else
+        return ''
+    endif
+endfunction
+
+let g:ctrlp_status_func = {
+    \ 'main': 'CtrlPStatusFunc_1',
+    \ 'prog': 'CtrlPStatusFunc_2',
+\ }
+
+function! CtrlPStatusFunc_1(focus, byfname, regex, prev, item, next, marked)
+    let g:lightline.ctrlp_regex = a:regex
+    let g:lightline.ctrlp_prev = a:prev
+    let g:lightline.ctrlp_item = a:item
+    let g:lightline.ctrlp_next = a:next
+    return lightline#statusline(0)
+endfunction
+
+function! CtrlPStatusFunc_2(str)
+    return lightline#statusline(0)
+endfunction
+
+function! MyLines()
+    return '↡ ' . line('$')
+endfunction
+
+function! MyCWD()
+    return '۩ ' . fnamemodify(getcwd(), ':~')
+endfunction
+
+function! MyBufDir()
+    return '⌖ ' . fnamemodify(expand('%:h'), ':~')
+endfunction
+
+function! MyTabnr(tabnr)
+    return '№ ' . a:tabnr
+endfunction
+
+function! MyTabname(tabnr)
+    let l:fname = bufname(MyTabnr2Bufnr(a:tabnr))
+    let l:mode = MyModeDetect(l:fname)
+
+    let l:sp_bufname = {
+    \    'ctrlp': 'P',
+    \    'tagbar': 'T',
+    \    'nerd': 'N',
+    \    'cmd': 'C',
+    \}
+    let l:bufname = {
+    \    'file': fnamemodify(l:fname, ':t'),
+    \    'blank': '☄ ',
+    \}
+
+    return (has_key(l:sp_bufname, l:mode) ? '⚙ ' . l:sp_bufname[l:mode] :
+         \  MyTabnameDecoration(l:bufname[l:mode], a:tabnr))
+endfunction
+
+function! MyTabnr2Bufnr(tabnr)
+    let buflist = tabpagebuflist(a:tabnr)
+    let winnr = tabpagewinnr(a:tabnr)
+    return buflist[winnr - 1]
+endfunction
+
+function! MyTabnameDecoration(tabname, tabnr)
+    let l:ro = MyTabReadonly(a:tabnr) ? MyTabReadonly(a:tabnr) + ' ' : ''
+    let l:modable = lightline#tab#modified(a:tabnr)
+    let l:modable = l:modable != '' ? ' ' . l:modable : ''
+    return l:ro . a:tabname . l:modable
+endfunction
+
+function! MyTabReadonly(tabnr)
+    let l:ro = lightline#tab#readonly(a:tabnr)
+    return l:ro == 'RO' ? '⭤' : ''
 endfunction
 
 " always show status line
 set laststatus=2
+" and tab line
+set showtabline=2
 " ++++++++++++++++
 " << lightline.vim
 " ++++++++++++++++
@@ -240,7 +391,6 @@ nnoremap <C-p> :echo expand('%:p')<CR>
 " ++++++++++++
 set showmatch
 " for unicodes
-set ambiwidth=double
 set fileencodings=ucs-bom,utf-8,iso-2022-jp,euc-jp,shift-jis,cp932,latin1
 set fileformats=unix,dos,mac
 " <tab> width in view
