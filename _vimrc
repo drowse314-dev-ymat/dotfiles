@@ -191,7 +191,6 @@ let g:ctrlp_working_path_mode = 'ra'
 " +++++++++
 let g:tagbar_autofocus = 1
 let g:tagbar_autoshowtag = 1
-"let g:tagbar_compact = 1
 let g:tagbar_iconchars = ['<>', '<->']
 let g:tagbar_map_jump = '<C-j>'
 let g:tagbar_width = 35
