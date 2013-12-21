@@ -231,6 +231,7 @@ nnoremap <leader>n :call ToggleRelativeNumber()<CR>
 set ruler
 set cursorline
 set cursorcolumn
+set fillchars=vert:\ 
 set guicursor=n-v-c:block,o:hor50,i-ci:hor15,r-cr:hor30,sm:block,a:blinkon0
 set scrolloff=3
 nnoremap <C-p> :echo expand('%:p')<CR>
