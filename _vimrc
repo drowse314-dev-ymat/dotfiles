@@ -283,6 +283,8 @@ autocmd FileType * execute 'set softtabstop=' . MyTabWidth()
 autocmd FileType * execute 'set shiftwidth=' . MyTabWidth()
 set noautoindent
 set nosmartindent
+set nopaste
+nnoremap <leader>p :set paste!<CR>
 " +++++++
 " << edit
 
