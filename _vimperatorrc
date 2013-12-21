@@ -60,7 +60,7 @@ qmark j http://python-doc-ja.readthedocs.org/
 
 "================plugin------
 let g:plugin_loader_roots = "~/.vimperator/vimperator-plugins/ ~/vimperator/vimperator-plugins/"
-let g:plugin_loader_plugins = "_libly,appendAnchor,multi_requester,alert,buffer-multiple-hints,PDF.js,tabsort"
+let g:plugin_loader_plugins = "_libly,appendAnchor,multi_requester,alert,buffer-multiple-hints,PDF.js,tabsort,toggler"
 "+++ for multi_requester +++
 javascript <<EOM
 commands.addUserCommand(
@@ -71,6 +71,13 @@ commands.addUserCommand(
     }
 );
 EOM
+
+js <<EOM
+liberator.globalVariables.toggler = {
+  tlbar: ["set toolbars=noaddons,nobookmarks,nomenu,navigation,tabs","set toolbars=none"],
+};
+EOM
+nnoremap <C-t>b :toggle tlbar<CR>
 "+++++++++++++++++++++++++++
 
 
