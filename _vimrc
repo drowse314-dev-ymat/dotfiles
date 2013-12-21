@@ -45,6 +45,7 @@ NeoBundle 'vim-scripts/jellybeans.vim.git'
 NeoBundle 'itchyny/landscape.vim'
 NeoBundle 'vim-scripts/Sorcerer.git'
 NeoBundle 'itchyny/lightline.vim'
+NeoBundle 'cocopon/colorswatch.vim.git'
 " syntax
 NeoBundle 'derekwyatt/vim-scala.git'
 NeoBundle 'elzr/vim-json.git'
