@@ -269,13 +269,12 @@ set backspace=indent,eol,start
 set expandtab
 " for tab width
 function! MyTabWidth()
-    let shorttab = ['ruby', 'html']
-    if (index(shorttab, &filetype) > -1)
-        let tabwidth = 2
-    else
-        let tabwidth = 4
+    let l:tabwidth = 4
+    let l:shorttab = ['ruby', 'html']
+    if (index(l:shorttab, &filetype) > -1)
+        let l:tabwidth = 2
     endif
-    return tabwidth
+    return l:tabwidth
 endfunction
 " <tab> is replced with spaces:
 autocmd FileType * execute 'set softtabstop=' . MyTabWidth()
@@ -306,18 +305,18 @@ nnoremap tn :tabnew<CR>
 
 " for moving tab
 function! CurrentTabToLast()
-    let current = tabpagenr()
-    let to_move = bufname('%')
+    let l:current = tabpagenr()
+    let l:to_move = bufname('%')
     execute 'tabmove ' . tabpagenr('$')
-    execute 'normal ' . current . 'gt'
+    execute 'normal ' . l:current . 'gt'
     redraw
-    echomsg 'moved to last: "' . to_move . '".'
+    echomsg 'moved to last: "' . l:to_move . '".'
 endfunction
 nnoremap tl :call CurrentTabToLast()<CR>
 
 function! MoveTabToVisualIndex(index)
-    let index = a:index - 1
-    execute 'tabmove ' . index
+    let l:index = a:index - 1
+    execute 'tabmove ' . l:index
 endfunction
 command! -nargs=1 ReadableTabMove :call MoveTabToVisualIndex(<args>)
 nnoremap tm :execute "ReadableTabMove "<Space>.<Space>
