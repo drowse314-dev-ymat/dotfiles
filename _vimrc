@@ -198,7 +198,7 @@ endfunction
 
 function! MyPercent()
     let l:selection = {'pos': '⌖ ', 'at': '﹫'}
-    let l:percent = float2nr(100 * line('.') / line('$'))
+    let l:percent = printf("%.1f", 100.0 * line('.') / line('$'))
     return l:selection.pos . l:percent . '%'
 endfunction
 
