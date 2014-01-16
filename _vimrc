@@ -253,11 +253,31 @@ function! MyLines()
 endfunction
 
 function! MyCWD()
-    return '۩ ' . fnamemodify(getcwd(), ':~')
+    let l:dir = fnamemodify(getcwd(), ':~')
+    let l:dir = strlen(l:dir) < 20 ? l:dir : MyShortenPath(l:dir)
+    return '۩ ' . l:dir
 endfunction
 
 function! MyBufDir()
-    return '⌖ ' . fnamemodify(expand('%:h'), ':~')
+    let l:dir = fnamemodify(expand('%:h'), ':~')
+    let l:dir = strlen(l:dir) < 40 ? l:dir : MyShortenPath(l:dir)
+    return '⌖ ' . l:dir
+endfunction
+
+function! MyShortenPath(path)
+    let l:abbrev_str = '..'
+    let l:shortened_length = 2
+    let l:parts = split(a:path, '/')
+    let l:shorten = []
+    for l:part in l:parts[:-2]
+        if strlen(l:part) >  (l:shortened_length + strlen(l:abbrev_str))
+            call add(l:shorten, l:part[0:(l:shortened_length - 1)] . l:abbrev_str)
+        else
+            call add(l:shorten, l:part)
+        endif
+    endfor
+    call add(l:shorten, l:parts[-1])
+    return join(l:shorten, '/')
 endfunction
 
 function! MyTabnr(tabnr)
