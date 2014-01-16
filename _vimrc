@@ -394,6 +394,9 @@ set number
 function! ToggleRelativeNumber()
     if &number
         set relativenumber
+    elseif &relativenumber
+        set number
+        set nonumber
     else
         set number
     endif
