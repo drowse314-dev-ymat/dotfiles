@@ -35,6 +35,7 @@ NeoBundle 'vim-scripts/pdftotext.git'
 NeoBundle 'mattn/benchvimrc-vim.git'
 NeoBundle 'kien/ctrlp.vim.git'
 NeoBundle 'yonchu/accelerated-smooth-scroll'
+NeoBundle 'othree/eregex.vim.git'
 " edit
 NeoBundle 'Shougo/neocomplcache.git'
 NeoBundle 'mattn/emmet-vim.git'
