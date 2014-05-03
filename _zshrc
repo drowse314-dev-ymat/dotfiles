@@ -1,4 +1,12 @@
 # ----------------
+# Startup
+# ----------------
+typeset -U path cdpath fpath manpath
+fpath=(~/zsh_share/functions(N-/) ${fpath})
+typeset -xT SUDO_PATH sudo_path
+typeset -U sudo_path
+
+# ----------------
 # General
 # ----------------
 export EDITOR=vim
