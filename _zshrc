@@ -116,6 +116,12 @@ kterm*|xterm*|)
 esac
 
 # ==============
+# Plugin etc.
+# ==============
+autoload -Uz cd-bookmark
+alias cdc="cd-bookmark"  # maening "cd cached"...
+
+# ==============
 # Site settings.
 # ==============
 source ~/site_zshrc
