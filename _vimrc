@@ -34,6 +34,7 @@ NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'vim-scripts/pdftotext.git'
 NeoBundle 'mattn/benchvimrc-vim.git'
 NeoBundle 'kien/ctrlp.vim.git'
+NeoBundle 'yonchu/accelerated-smooth-scroll'
 " edit
 NeoBundle 'Shougo/neocomplcache.git'
 NeoBundle 'mattn/emmet-vim.git'
@@ -369,6 +370,14 @@ nnoremap tgb :TagbarToggle<CR>
 " +++++++++
 " << Tagbar
 " +++++++++
+
+" ++++++++++++++++++++++++++++
+" >> accelerated-smooth-scroll
+" ++++++++++++++++++++++++++++
+let g:ac_smooth_scroll_du_sleep_time_msec = 5
+" ++++++++++++++++++++++++++++
+" << accelerated-smooth-scroll
+" ++++++++++++++++++++++++++++
 
 " =====================
 " Command line options.
