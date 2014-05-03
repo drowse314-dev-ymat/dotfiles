@@ -46,6 +46,8 @@ NeoBundle 'vim-scripts/jellybeans.vim.git'
 NeoBundle 'itchyny/landscape.vim'
 NeoBundle 'vim-scripts/Sorcerer.git'
 NeoBundle 'itchyny/lightline.vim'
+NeoBundle 'noahfrederick/vim-hemisu.git'
+NeoBundle 'vim-scripts/summerfruit256.vim.git'
 NeoBundle 'cocopon/colorswatch.vim.git'
 " syntax
 NeoBundle 'derekwyatt/vim-scala.git'
@@ -442,6 +444,8 @@ noremap <expr><S-j> ":colorscheme jellybeans<CR>"
 noremap <expr><S-b> ":colorscheme BusyBee<CR>"
 noremap <expr><C-l> ":colorscheme landscape<CR>"
 noremap <expr><C-o> ":colorscheme sorcerer<CR>"
+noremap <expr><S-h> ":colorscheme hemisu<CR>"
+noremap <expr><S-l> ":colorscheme summerfruit256<CR>"
 " +++++++++++++++++
 " << color settings
 
