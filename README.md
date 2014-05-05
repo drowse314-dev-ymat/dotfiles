@@ -47,7 +47,7 @@ $ echo "source-file ~/dotfiles/tmux/_tmux.conf" >> ~/.tmux.conf
 
 ## Vimperator
 
-Assume that vimperator is installed on you Firefox.
+Assume that vimperator is installed on your Firefox.
 
 ### Prepare plugin-loader environment.
 
