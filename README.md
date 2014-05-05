@@ -58,7 +58,7 @@ Vimperator
 
 Assume that vimperator is installed on you Firefox.
 
-1. Prepare plugin-loader environment.
+## Prepare plugin-loader environment.
 
 ```bash
 $ cd ~/.vimperator
@@ -74,7 +74,7 @@ $ cd plugin
 $ ln -s ~/.vimperator/vimperator-plugins/plugin_loader.js .  # or copy it
 ```
 
-2. Add colorscheme.
+## Add colorscheme.
 
 ```bash
 $ cd ~/.vimperator
@@ -83,20 +83,20 @@ $ cd colors
 $ ln -s ~/dotfiles/vimperator/sweets_snaka.vimp .
 ```
 
-3. Source the rc.
+## Source the rc.
 
 ```bash
 $ echo "source ~/dotfiles/vimperator/_vimperatorrc" >> ~/.vimperatorrc
 ```
 
-4. (Optional) Create site settings.
+## (Optional) Create site settings.
 
 At the end of ``_vimperatorrc```, `~/site_vimperatorrc`` will be loaded if exists.
 
 Vim
 ----
 
-1. Prepare NeoBundle.
+## Prepare NeoBundle.
 
 ```bash
 $ cd ~
@@ -105,26 +105,26 @@ $ cd vim_share/bundle
 $ git clone https://github.com/Shougo/neobundle.vim.git
 ```
 
-2. Source the rc.
+## Source the rc.
 
 ```bash
 $ echo "source ~/dotfiles/vim/_vimrc" >> ~/.vimrc
 ```
 
-3. Install plugins
+## Install plugins
 
 Run vim, exexute ``:NeoBundleInstall``.
 
 Zsh
 ----
 
-1. Source the rc.
+## Source the rc.
 
 ```bash
 $ echo "source ~/dotfiles/zsh/_zshrc" >> ~/.zshrc
 ```
 
-2. (optional) install cd-bookmark.
+## (optional) install cd-bookmark.
 
 ```bash
 $ cd ~
