@@ -92,10 +92,8 @@ Vim
 
 ```bash
 $ cd ~
-$ mkdir vim_share
-$ cd vim_share
-$ mkdir bundle
-$ cd bundle
+$ mkdir vim_share/bundle
+$ cd vim_share/bundle
 $ git clone https://github.com/Shougo/neobundle.vim.git
 ```
 
