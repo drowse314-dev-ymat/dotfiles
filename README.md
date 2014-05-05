@@ -108,3 +108,23 @@ $ echo "source ~/dotfiles/vim/_vimrc" >> ~/.vimrc
 3. Install plugins
 
 Run vim, exexute ``:NeoBundleInstall``.
+
+Zsh
+----
+
+1. Source the rc.
+
+```bash
+$ echo "source ~/dotfiles/zsh/_zshrc" >> ~/.zshrc
+
+2. (optional) install cd-bookmark.
+
+```bash
+$ cd ~
+$ mkdir -p zsh_share/functions/pkg
+$ cd zsh_share/functions/pkg
+$ git clone https://github.com/mollifier/cd-bookmark.git
+$ cd ~/zsh_share/functions
+$ ln -sv ~/zsh_share/functions/pkg/cd-bookmark/cd-bookmark cd-bookmark
+$ ln -sv ~/zsh_share/functions/pkg/cd-bookmark/_cd-bookmark _cd-bookmark
+```
