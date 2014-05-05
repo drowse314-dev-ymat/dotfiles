@@ -105,7 +105,7 @@ $ git clone https://github.com/Shougo/neobundle.vim.git
 $ echo "source ~/dotfiles/vim/_vimrc" >> ~/.vimrc
 ```
 
-### Install plugins
+### Install plugins.
 
 Run vim, exexute ``:NeoBundleInstall``.
 
@@ -121,7 +121,7 @@ At the end of ``_vimrc``, ``~/site_vimrc`` will be loaded if exists.
 $ echo "source ~/dotfiles/zsh/_zshrc" >> ~/.zshrc
 ```
 
-### (optional) install cd-bookmark.
+### (Optional) Install cd-bookmark.
 
 ```bash
 $ cd ~
