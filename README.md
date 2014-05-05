@@ -84,3 +84,27 @@ $ echo "source ~/dotfiles/vimperator/_vimperatorrc" >> ~/.vimperatorrc
 4. (Optional) Create site settings.
 
 At the end of ``_vimperatorrc```, `~/site_vimperatorrc`` will be loaded if exists.
+
+Vim
+----
+
+1. Prepare NeoBundle.
+
+```bash
+$ cd ~
+$ mkdir vim_share
+$ cd vim_share
+$ mkdir bundle
+$ cd bundle
+$ git clone https://github.com/Shougo/neobundle.vim.git
+```
+
+2. Source the rc.
+
+```bash
+$ echo "source ~/dotfiles/vim/_vimrc" >> ~/.vimrc
+```
+
+3. Install plugins
+
+Run vim, exexute ``:NeoBundleInstall``.
