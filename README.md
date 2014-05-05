@@ -122,6 +122,7 @@ Zsh
 
 ```bash
 $ echo "source ~/dotfiles/zsh/_zshrc" >> ~/.zshrc
+```
 
 2. (optional) install cd-bookmark.
 
