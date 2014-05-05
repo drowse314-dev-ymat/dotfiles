@@ -36,6 +36,15 @@ Add the lines below into your ``.gitconfig`` file.
 	path = ~/dotfiles/gitconfig/_gitconfig
 ```
 
+Tmux
+-----
+
+Add the line below into your ``.tmux.conf`` file.
+
+```
+echo "source-file ~/dotfiles/tmux/_tmux.conf" >> ~/.tmux.conf
+```
+
 Vimperator
 -----------
 
