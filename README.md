@@ -1,31 +1,28 @@
-For
-====
+# For
 + Git
 + tmux
 + vimperator on Firefox
 + Vim
 + Zsh
 
-Prerequisites
-==============
+# Prerequisites
 
-For Vim plugins
----------------
+## For Vim plugins
+-------------------
 + pdftotext for 'vim-scripts/pdftotext.git'
 + Fonts patched for Powerline, for 'itchyny/lightline.vim' (fontforge needed)
 + Exuberant Ctags for 'majutsushi/tagbar.git'
 
-For Git
---------
+## For Git
+-----------
 + lighttpd for git instaweb (optional)
 
-For Zshrc
-----------
+## For Zshrc
+-------------
 + cd-bookmark (optional)
 
 
-Install
-========
+# Install
 
 Assume you have cloned this repo into your $HOME dir.
 
@@ -34,8 +31,8 @@ $ cd ~
 $ git clone https://github.com/drowse314-dev-ymat/dotfiles.git
 ```
 
-Git
-----
+## Git
+------
 
 Add the lines below into your ``.gitconfig`` file.
 
@@ -44,8 +41,8 @@ Add the lines below into your ``.gitconfig`` file.
 	path = ~/dotfiles/gitconfig/_gitconfig
 ```
 
-Tmux
------
+## Tmux
+-------
 
 Add the line below into your ``.tmux.conf`` file.
 
@@ -53,12 +50,12 @@ Add the line below into your ``.tmux.conf`` file.
 $ echo "source-file ~/dotfiles/tmux/_tmux.conf" >> ~/.tmux.conf
 ```
 
-Vimperator
------------
+## Vimperator
+-------------
 
 Assume that vimperator is installed on you Firefox.
 
-## Prepare plugin-loader environment.
+### Prepare plugin-loader environment.
 
 ```bash
 $ cd ~/.vimperator
@@ -74,7 +71,7 @@ $ cd plugin
 $ ln -s ~/.vimperator/vimperator-plugins/plugin_loader.js .  # or copy it
 ```
 
-## Add colorscheme.
+### Add colorscheme.
 
 ```bash
 $ cd ~/.vimperator
@@ -83,20 +80,20 @@ $ cd colors
 $ ln -s ~/dotfiles/vimperator/sweets_snaka.vimp .
 ```
 
-## Source the rc.
+### Source the rc.
 
 ```bash
 $ echo "source ~/dotfiles/vimperator/_vimperatorrc" >> ~/.vimperatorrc
 ```
 
-## (Optional) Create site settings.
+### (Optional) Create site settings.
 
 At the end of ``_vimperatorrc``, ``~/site_vimperatorrc`` will be loaded if exists.
 
-Vim
-----
+## Vim
+-------
 
-## Prepare NeoBundle.
+### Prepare NeoBundle.
 
 ```bash
 $ cd ~
@@ -105,26 +102,26 @@ $ cd vim_share/bundle
 $ git clone https://github.com/Shougo/neobundle.vim.git
 ```
 
-## Source the rc.
+### Source the rc.
 
 ```bash
 $ echo "source ~/dotfiles/vim/_vimrc" >> ~/.vimrc
 ```
 
-## Install plugins
+### Install plugins
 
 Run vim, exexute ``:NeoBundleInstall``.
 
-Zsh
-----
+## Zsh
+------
 
-## Source the rc.
+### Source the rc.
 
 ```bash
 $ echo "source ~/dotfiles/zsh/_zshrc" >> ~/.zshrc
 ```
 
-## (optional) install cd-bookmark.
+### (optional) install cd-bookmark.
 
 ```bash
 $ cd ~
