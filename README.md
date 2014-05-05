@@ -15,6 +15,14 @@ For Vim plugins
 + Fonts patched for Powerline, for 'itchyny/lightline.vim' (fontforge needed)
 + Exuberant Ctags for 'majutsushi/tagbar.git'
 
+For Git
+--------
++ lighttpd for git instaweb (optional)
+
+For Zshrc
+----------
++ cd-bookmark (optional)
+
 
 Install
 ========
