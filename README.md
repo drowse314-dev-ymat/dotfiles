@@ -91,7 +91,7 @@ $ echo "source ~/dotfiles/vimperator/_vimperatorrc" >> ~/.vimperatorrc
 
 ## (Optional) Create site settings.
 
-At the end of ``_vimperatorrc```, `~/site_vimperatorrc`` will be loaded if exists.
+At the end of ``_vimperatorrc``, ``~/site_vimperatorrc`` will be loaded if exists.
 
 Vim
 ----
