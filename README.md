@@ -26,6 +26,16 @@ $ cd ~
 $ git clone https://github.com/drowse314-dev-ymat/dotfiles.git
 ```
 
+Git
+----
+
+Add the lines below into your ``.gitconfig`` file.
+
+```
+[include]
+	path = ~/dotfiles/gitconfig/_gitconfig
+```
+
 Vimperator
 -----------
 
