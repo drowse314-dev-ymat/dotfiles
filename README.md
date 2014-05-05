@@ -8,17 +8,14 @@
 # Prerequisites
 
 ## For Vim plugins
--------------------
 + pdftotext for 'vim-scripts/pdftotext.git'
 + Fonts patched for Powerline, for 'itchyny/lightline.vim' (fontforge needed)
 + Exuberant Ctags for 'majutsushi/tagbar.git'
 
 ## For Git
------------
 + lighttpd for git instaweb (optional)
 
 ## For Zshrc
--------------
 + cd-bookmark (optional)
 
 
@@ -32,7 +29,6 @@ $ git clone https://github.com/drowse314-dev-ymat/dotfiles.git
 ```
 
 ## Git
-------
 
 Add the lines below into your ``.gitconfig`` file.
 
@@ -42,7 +38,6 @@ Add the lines below into your ``.gitconfig`` file.
 ```
 
 ## Tmux
--------
 
 Add the line below into your ``.tmux.conf`` file.
 
@@ -51,7 +46,6 @@ $ echo "source-file ~/dotfiles/tmux/_tmux.conf" >> ~/.tmux.conf
 ```
 
 ## Vimperator
--------------
 
 Assume that vimperator is installed on you Firefox.
 
@@ -91,7 +85,6 @@ $ echo "source ~/dotfiles/vimperator/_vimperatorrc" >> ~/.vimperatorrc
 At the end of ``_vimperatorrc``, ``~/site_vimperatorrc`` will be loaded if exists.
 
 ## Vim
--------
 
 ### Prepare NeoBundle.
 
@@ -113,7 +106,6 @@ $ echo "source ~/dotfiles/vim/_vimrc" >> ~/.vimrc
 Run vim, exexute ``:NeoBundleInstall``.
 
 ## Zsh
-------
 
 ### Source the rc.
 
