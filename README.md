@@ -49,8 +49,8 @@ Tmux
 
 Add the line below into your ``.tmux.conf`` file.
 
-```
-echo "source-file ~/dotfiles/tmux/_tmux.conf" >> ~/.tmux.conf
+```bash
+$ echo "source-file ~/dotfiles/tmux/_tmux.conf" >> ~/.tmux.conf
 ```
 
 Vimperator
