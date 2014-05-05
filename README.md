@@ -23,7 +23,7 @@
 
 Assume you have cloned this repo into your $HOME dir.
 
-```
+```bash
 $ cd ~
 $ git clone https://github.com/drowse314-dev-ymat/dotfiles.git
 ```
