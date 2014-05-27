@@ -56,6 +56,7 @@ NeoBundle 'elzr/vim-json.git'
 NeoBundle 'kchmck/vim-coffee-script.git'
 NeoBundle 'majutsushi/tagbar.git'
 NeoBundle 'bohrshaw/vim-vimperator-syntax.git'
+NeoBundle 'niklasl/vim-rdf.git'
 filetype plugin indent on
 " ++++++++++++
 " << NeoBundle
