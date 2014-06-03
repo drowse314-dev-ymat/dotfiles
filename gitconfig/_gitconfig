@@ -20,6 +20,8 @@
     insteadOf = git://
 [diff]
     algorithm = histogram
+[merge]
+    ff = false
 [alias]
     co = checkout
     sta = status
