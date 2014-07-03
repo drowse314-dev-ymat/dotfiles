@@ -127,7 +127,7 @@ esac
 # Plugin etc.
 # ==============
 autoload -Uz cd-bookmark
-alias cdc="cd-bookmark"  # maening "cd cached"...
+alias cdc="cd-bookmark"  # meaning "cd cached"...
 
 # ==============
 # Site settings.
