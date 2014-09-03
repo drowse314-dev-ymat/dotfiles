@@ -129,6 +129,8 @@ esac
 autoload -Uz cd-bookmark
 alias cdc="cd-bookmark"  # meaning "cd cached"...
 
+alias tmux="tmux -2"
+
 # ==============
 # Site settings.
 # ==============
