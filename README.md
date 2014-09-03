@@ -1,6 +1,6 @@
 # For
 + Git (>= v1.7.10)
-+ tmux
++ tmux (>= v1.2)
 + vimperator on Firefox
 + Vim
 + Zsh
