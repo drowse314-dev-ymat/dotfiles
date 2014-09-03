@@ -94,7 +94,7 @@ add-zsh-hook precmd _update_vcs_info_msg
 # Normal user
 tmp_prompt="
 %{${fg[yellow]}%}%/ %{${fg[green]}%}%D{%Y.%m.%d} %T
-%{${fg[cyan]}%} %n $ %{${reset_color}%}"
+%{${fg[cyan]}%}[%n]$ %{${reset_color}%}"
 tmp_prompt2="%{${fg[cyan]}%}%_> %{${reset_color}%}"
 tmp_rprompt="%1(v|%{${fg[yellow]}%}%1v |)%{${reset_color}%}"
 tmp_sprompt="%{${fg[red]}%}Did you mean: %{${reset_color}%}"'"'"%r"'"'" %{${fg[red]}%}[Yes, No, Abort, Edit]-> %{${reset_color}%}"
