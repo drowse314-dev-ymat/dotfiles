@@ -30,6 +30,7 @@
     statu = status
     add-p = add -p
     commit-v = commit -v
+    mergeff = merge --ff-only
     gs = log --graph \
              --abbrev-commit \
              --decorate \
@@ -41,4 +42,3 @@
              --decorate \
              --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'
     gal = !git gl --all
-    mergeff = merge --ff-only
