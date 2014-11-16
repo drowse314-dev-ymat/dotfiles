@@ -30,6 +30,7 @@
     statu = status
     add-p = add -p
     commit-v = commit -v
+    mergeff = merge --ff-only
     gs = log --graph \
              --abbrev-commit \
              --decorate \
