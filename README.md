@@ -1,5 +1,5 @@
 # For
-+ Git (>= v1.7.10)
++ Git (>= v2.0)
 + tmux (>= v1.2)
 + vimperator on Firefox
 + Vim

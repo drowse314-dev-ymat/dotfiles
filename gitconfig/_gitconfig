@@ -22,6 +22,8 @@
     algorithm = histogram
 [merge]
     ff = false
+[pull]
+    ff = true
 [alias]
     co = checkout
     sta = status
