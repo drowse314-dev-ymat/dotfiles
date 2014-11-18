@@ -25,8 +25,9 @@ set backupcopy=yes
 if has('vim_starting')
     set runtimepath+=~/vim_share/bundle/neobundle.vim/
 endif
-call neobundle#rc(expand('~/vim_share/bundle'))
+call neobundle#begin(expand('~/vim_share/bundle'))
 let g:neobundle_default_git_protocol='https'
+
 " general
 NeoBundle 'Shougo/neobundle.vim.git'
 NeoBundle 'scrooloose/nerdtree.git'
@@ -57,6 +58,8 @@ NeoBundle 'kchmck/vim-coffee-script.git'
 NeoBundle 'majutsushi/tagbar.git'
 NeoBundle 'bohrshaw/vim-vimperator-syntax.git'
 NeoBundle 'niklasl/vim-rdf.git'
+
+call neobundle#end()
 filetype plugin indent on
 " ++++++++++++
 " << NeoBundle
