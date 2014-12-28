@@ -473,7 +473,12 @@ set expandtab
 " for tab width
 function! MyTabWidth()
     let l:tabwidth = 4
-    let l:shorttab = ['ruby', 'html', 'scala', 'tex', 'xml', 'coffee']
+    let l:shorttab = [
+    \    'xml', 'html', 'htmldjango',
+    \    'ruby', 'javascript', 'coffee',
+    \    'scala',
+    \    'tex'
+    \]
     if (index(l:shorttab, &filetype) > -1)
         let l:tabwidth = 2
     endif
