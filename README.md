@@ -59,7 +59,6 @@ Assume that vimperator is installed on your Firefox.
 $ cd ~/.vimperator
 $ git clone https://github.com/vimpr/vimperator-plugins.git
 $ cd vimperator-plugins
-$ git checkout 3.6  # for Firefox 20.* or higher
 ```
 
 ```bash
