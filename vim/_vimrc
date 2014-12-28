@@ -313,8 +313,8 @@ function! MyTabname(tabnr)
 endfunction
 
 function! MyTabnr2Bufnr(tabnr)
-    let buflist = tabpagebuflist(a:tabnr)
-    let winnr = tabpagewinnr(a:tabnr)
+    let l:buflist = tabpagebuflist(a:tabnr)
+    let l:winnr = tabpagewinnr(a:tabnr)
     return buflist[winnr - 1]
 endfunction
 
