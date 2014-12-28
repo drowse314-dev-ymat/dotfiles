@@ -343,6 +343,9 @@ set showtabline=2
 " ++++++++++++
 let g:user_emmet_settings = {
 \    'lang': 'ja',
+\    'html' : {
+\        'indentation' : '  '
+\    }
 \}
 " ++++++++++++
 " << emmet-vim
