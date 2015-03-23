@@ -58,6 +58,7 @@ NeoBundle 'kchmck/vim-coffee-script.git'
 NeoBundle 'majutsushi/tagbar.git'
 NeoBundle 'bohrshaw/vim-vimperator-syntax.git'
 NeoBundle 'niklasl/vim-rdf.git'
+NeoBundle 'stephpy/vim-yaml'
 
 call neobundle#end()
 filetype plugin indent on
