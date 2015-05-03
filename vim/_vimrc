@@ -479,7 +479,7 @@ set expandtab
 function! MyTabWidth()
     let l:tabwidth = 4
     let l:shorttab = [
-    \    'xml', 'html', 'htmldjango',
+    \    'xml', 'html', 'htmldjango', 'json',
     \    'ruby', 'javascript', 'coffee',
     \    'scala',
     \    'tex'
