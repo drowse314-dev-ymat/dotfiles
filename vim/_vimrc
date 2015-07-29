@@ -40,6 +40,7 @@ NeoBundle 'othree/eregex.vim.git'
 " edit
 NeoBundle 'Shougo/neocomplcache.git'
 NeoBundle 'mattn/emmet-vim.git'
+NeoBundle 'terryma/vim-expand-region.git'
 " colors & appearance
 NeoBundle 'ciaranm/inkpot.git'
 NeoBundle 'jnurmine/Zenburn.git'
