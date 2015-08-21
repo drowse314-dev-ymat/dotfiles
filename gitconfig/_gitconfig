@@ -35,6 +35,7 @@
     add-p = add -p
     commit-v = commit -v
     mergeff = merge --ff-only
+    pullff = pull --ff-only
     gs = log --graph \
              --abbrev-commit \
              --decorate \
