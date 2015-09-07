@@ -37,9 +37,19 @@ NeoBundle 'mattn/benchvimrc-vim.git'
 NeoBundle 'kien/ctrlp.vim.git'
 NeoBundle 'yonchu/accelerated-smooth-scroll'
 NeoBundle 'othree/eregex.vim.git'
+NeoBundle 'Shougo/vimproc.vim', {
+\ 'build' : {
+\     'windows' : 'tools\\update-dll-mingw',
+\     'cygwin' : 'make -f make_cygwin.mak',
+\     'mac' : 'make -f make_mac.mak',
+\     'linux' : 'make',
+\     'unix' : 'gmake',
+\    },
+\ }
 " edit
 NeoBundle 'Shougo/neocomplcache.git'
 NeoBundle 'mattn/emmet-vim.git'
+NeoBundle 'Quramy/tsuquyomi'
 " colors & appearance
 NeoBundle 'ciaranm/inkpot.git'
 NeoBundle 'jnurmine/Zenburn.git'
@@ -59,6 +69,7 @@ NeoBundle 'majutsushi/tagbar.git'
 NeoBundle 'bohrshaw/vim-vimperator-syntax.git'
 NeoBundle 'niklasl/vim-rdf.git'
 NeoBundle 'stephpy/vim-yaml'
+NeoBundle 'leafgarland/typescript-vim.git'
 
 call neobundle#end()
 filetype plugin indent on
