@@ -1,0 +1,14 @@
+#!/bin/sh
+
+set -eu
+
+for branch in `git branch --merged | grep -v "*" | grep -v "master"`; do
+    echo "Delete branch '${branch}'? [Y/n]"
+    read yn
+
+    yn=`echo ${yn} | tr y Y | tr -d '[\[\]]'`
+    case $yn in
+        ""|Y* ) git branch -d $branch;;
+        *  ) echo "skipped '${branch}'.";;
+    esac
+done
