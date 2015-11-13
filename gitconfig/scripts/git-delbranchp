@@ -11,4 +11,5 @@ for branch in `git branch --merged | grep -v "*" | grep -v "master"`; do
         ""|Y* ) git branch -d $branch;;
         *  ) echo "skipped '${branch}'.";;
     esac
+    echo ""
 done
