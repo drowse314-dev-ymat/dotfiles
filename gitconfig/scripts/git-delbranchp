@@ -2,8 +2,11 @@
 
 set -eu
 
+prompt_color="\033[34;1m"
+color_end="\033[0m"
+
 for branch in `git branch --merged | grep -v "*" | grep -v "master"`; do
-    echo "Delete branch '${branch}'? [Y/n/q]"
+    printf "${prompt_color}Delete branch '${branch}' [Y/n/q]? ${color_end}"
     read yn
 
     yn=`echo ${yn} | tr y Y | tr q Q | tr -d '[\[\]]'`
