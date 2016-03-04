@@ -1,0 +1,39 @@
+# general
+
+[[plugins]]
+repo = 'scrooloose/nerdtree.git'
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+
+[[plugins]]
+repo = 'kien/ctrlp.vim.git'
+
+[[plugins]]
+repo = 'yonchu/accelerated-smooth-scroll'
+
+[[plugins]]
+repo = 'othree/eregex.vim.git'
+
+
+# colors & appearance
+
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+
+[[plugins]]
+repo = 'ciaranm/inkpot.git'
+[[plugins]]
+repo = 'jnurmine/Zenburn.git'
+[[plugins]]
+repo = 'vim-scripts/BusyBee.git'
+[[plugins]]
+repo = 'vim-scripts/jellybeans.vim.git'
+[[plugins]]
+repo = 'itchyny/landscape.vim'
+[[plugins]]
+repo = 'vim-scripts/Sorcerer.git'
+[[plugins]]
+repo = 'noahfrederick/vim-hemisu.git'
+[[plugins]]
+repo = 'vim-scripts/summerfruit256.vim.git'
