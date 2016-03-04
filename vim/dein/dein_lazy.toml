@@ -1,0 +1,58 @@
+# general
+
+[[plugins]]
+repo = 'vim-scripts/pdftotext.git'
+on_ft = ['pdf']
+
+[[plugins]]
+repo = 'mattn/benchvimrc-vim.git'
+on_cmd = ['BenchVimrc']
+
+[[plugins]]
+repo = 'majutsushi/tagbar.git'
+on_cmd = ['TagbarToggle']
+
+
+# edit
+
+[[plugins]]
+repo = 'Shougo/neocomplcache.git'
+on_i = 1
+
+[[plugins]]
+repo = 'mattn/emmet-vim.git'
+on_ft = ['html']
+
+
+# colors & appearance
+
+[[plugins]]
+repo = 'cocopon/colorswatch.vim.git'
+on_cmd = ['ColorSwatchGenerate']
+
+
+# syntax
+
+[[plugins]]
+repo = 'derekwyatt/vim-scala.git'
+on_ft = ['scala']
+
+[[plugins]]
+repo = 'elzr/vim-json.git'
+on_ft = ['json']
+
+[[plugins]]
+repo = 'kchmck/vim-coffee-script.git'
+on_ft = ['coffee']
+
+[[plugins]]
+repo = 'bohrshaw/vim-vimperator-syntax.git'
+on_ft = ['vimperator']
+
+[[plugins]]
+repo = 'niklasl/vim-rdf.git'
+on_ft = ['rdf']
+
+[[plugins]]
+repo = 'stephpy/vim-yaml'
+on_ft = ['yaml']
