@@ -1,0 +1,26 @@
+#!/bin/sh
+
+set -eu
+
+prompt_color="\033[34;1m"
+error_prompt_color="\033[31;1m"
+color_end="\033[0m"
+
+for branch in `git branch --merged | grep -v "*" | grep -v "master"`; do
+    session=true
+    while [ "$session" = true ]
+    do
+        printf "${prompt_color}Delete branch '${branch}' [Y/n/q]? ${color_end}"
+        read yn
+
+        session=false
+        yn=`echo ${yn} | tr y Y | tr q Q |  tr n N | tr -d '[\[\]]'`
+        case $yn in
+            ""|Y* ) git branch -d $branch;;
+            ""|Q* ) exit 0;;
+            ""|N* ) printf "skipped '${branch}'.\n";;
+            *  ) printf "${error_prompt_color}option not known: '${yn}'${color_end}\n"; session=true;;
+        esac
+        echo ""
+    done
+done

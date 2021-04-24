@@ -2,6 +2,9 @@
 "tab shift------
 noremap h <C-n><Esc>
 noremap l <C-p><Esc>
+"safe tabclose------
+noremap dd :tabclose<CR>
+map d <NOP>
 "horizontal------
 noremap <C-h> h
 noremap <C-l> l
