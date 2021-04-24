@@ -50,10 +50,6 @@ repo = 'kchmck/vim-coffee-script.git'
 on_ft = ['coffee']
 
 [[plugins]]
-repo = 'bohrshaw/vim-vimperator-syntax.git'
-on_ft = ['vimperator']
-
-[[plugins]]
 repo = 'niklasl/vim-rdf.git'
 on_ft = ['rdf']
 
