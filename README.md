@@ -46,44 +46,6 @@ $ echo "source-file ~/dotfiles/tmux/_tmux.conf" >> ~/.tmux.conf
 ```
 
 
-## Vimperator
-
-Assume that vimperator is installed on your Firefox.
-
-### Prepare plugin-loader environment.
-
-```bash
-$ cd ~/.vimperator
-$ git clone https://github.com/vimpr/vimperator-plugins.git
-$ cd vimperator-plugins
-```
-
-```bash
-$ cd ~/.vimperator
-$ mkdir -p plugin
-$ cd plugin
-$ ln -s ~/.vimperator/vimperator-plugins/plugin_loader.js .  # or copy it
-```
-
-### Add colorscheme.
-
-```bash
-$ cd ~/.vimperator
-$ mkdir -p colors
-$ cd colors
-$ ln -s ~/dotfiles/vimperator/sweets_snaka.vimp .
-```
-
-### Source the rc.
-
-```bash
-$ echo "source ~/dotfiles/vimperator/_vimperatorrc" >> ~/.vimperatorrc
-```
-
-### (Optional) Create site settings.
-
-At the end of ``_vimperatorrc``, ``~/site_vimperatorrc`` will be loaded if exists.
-
 ## Vim
 
 ### Prepare NeoBundle.
