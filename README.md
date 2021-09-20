@@ -45,9 +45,6 @@ Add the line below into your ``.tmux.conf`` file.
 $ echo "source-file ~/dotfiles/tmux/_tmux.conf" >> ~/.tmux.conf
 ```
 
-### (Optional) Create site settings.
-
-At the end of ``_tmux.conf``, ``~/site_tmux_conf`` will be loaded if exists.
 
 ## Vimperator
 
@@ -108,9 +105,6 @@ $ echo "source ~/dotfiles/vim/_vimrc" >> ~/.vimrc
 
 Run vim, exexute ``:NeoBundleInstall``.
 
-### (Optional) Create site settings.
-
-At the end of ``_vimrc``, ``~/site_vimrc`` will be loaded if exists.
 
 ## Zsh
 
@@ -131,7 +125,3 @@ $ cd ~/zsh_share/functions
 $ ln -sv ~/zsh_share/functions/pkg/cd-bookmark/cd-bookmark cd-bookmark
 $ ln -sv ~/zsh_share/functions/pkg/cd-bookmark/_cd-bookmark _cd-bookmark
 ```
-
-### (Optional) Create site settings.
-
-At the end of ``_zshrc``, ``~/site_zshrc`` will be loaded if exists.
