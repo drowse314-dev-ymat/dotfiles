@@ -1,9 +1,6 @@
 # For
-+ Git (>= v2.0)
-+ tmux (>= v1.2)
-+ vimperator on Firefox
-+ Vim
-+ Zsh
+
+Anything to share.
 
 # Prerequisites
 
