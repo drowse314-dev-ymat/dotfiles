@@ -525,8 +525,3 @@ nnoremap tm :execute "ReadableTabMove "<Space>.<Space>
 set swb=usetab
 " +++++++++++
 " << Tabpages
-
-" ==============
-" Site settings.
-" ==============
-source ~/site_vimrc
