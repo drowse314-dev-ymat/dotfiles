@@ -36,24 +36,12 @@ call dein#begin(s:dein_dir)
 
 let s:dein_toml      = '~/dotfiles/vim/dein/dein.toml'
 let s:dein_lazy_toml = '~/dotfiles/vim/dein/dein_lazy.toml'
-let s:site_dein_toml      = '~/vim_share/dein/site_dein.toml'
-let s:site_dein_lazy_toml = '~/vim_share/dein/site_dein_lazy.toml'
 
-if dein#load_cache([expand('<sfile>'), s:dein_toml, s:dein_lazy_toml])
-    call dein#load_toml(s:dein_toml,      {'lazy': 0})
-    call dein#load_toml(s:dein_lazy_toml, {'lazy': 1})
-
-    call dein#load_toml(s:site_dein_toml,      {'lazy': 0})
-    call dein#load_toml(s:site_dein_lazy_toml, {'lazy': 1})
-
-    call dein#save_cache()
-endif
+call dein#load_toml(s:dein_toml,      {'lazy': 0})
+call dein#load_toml(s:dein_lazy_toml, {'lazy': 1})
 
 call dein#end()
 
-if dein#check_install(['vimproc'])
-    call dein#install(['vimproc'])
-endif
 if dein#check_install()
     call dein#install()
 endif
@@ -421,7 +409,7 @@ nnoremap <leader>n :call ToggleRelativeNumber()<CR>
 set ruler
 set cursorline
 set cursorcolumn
-set fillchars=vert:\ 
+set fillchars=vert:\
 set guicursor=n-v-c:block,o:hor50,i-ci:hor15,r-cr:hor30,sm:block,a:blinkon0
 set scrolloff=3
 nnoremap <C-p> :echo expand('%:p')<CR>
@@ -532,8 +520,3 @@ nnoremap tm :execute "ReadableTabMove "<Space>.<Space>
 set swb=usetab
 " +++++++++++
 " << Tabpages
-
-" ==============
-" Site settings.
-" ==============
-source ~/site_vimrc

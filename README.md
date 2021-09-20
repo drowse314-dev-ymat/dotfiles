@@ -1,9 +1,6 @@
 # For
-+ Git (>= v2.0)
-+ tmux (>= v1.2)
-+ vimperator on Firefox
-+ Vim
-+ Zsh
+
+Anything to share.
 
 # Prerequisites
 
@@ -45,47 +42,6 @@ Add the line below into your ``.tmux.conf`` file.
 $ echo "source-file ~/dotfiles/tmux/_tmux.conf" >> ~/.tmux.conf
 ```
 
-### (Optional) Create site settings.
-
-At the end of ``_tmux.conf``, ``~/site_tmux_conf`` will be loaded if exists.
-
-## Vimperator
-
-Assume that vimperator is installed on your Firefox.
-
-### Prepare plugin-loader environment.
-
-```bash
-$ cd ~/.vimperator
-$ git clone https://github.com/vimpr/vimperator-plugins.git
-$ cd vimperator-plugins
-```
-
-```bash
-$ cd ~/.vimperator
-$ mkdir -p plugin
-$ cd plugin
-$ ln -s ~/.vimperator/vimperator-plugins/plugin_loader.js .  # or copy it
-```
-
-### Add colorscheme.
-
-```bash
-$ cd ~/.vimperator
-$ mkdir -p colors
-$ cd colors
-$ ln -s ~/dotfiles/vimperator/sweets_snaka.vimp .
-```
-
-### Source the rc.
-
-```bash
-$ echo "source ~/dotfiles/vimperator/_vimperatorrc" >> ~/.vimperatorrc
-```
-
-### (Optional) Create site settings.
-
-At the end of ``_vimperatorrc``, ``~/site_vimperatorrc`` will be loaded if exists.
 
 ## Vim
 
@@ -108,9 +64,6 @@ $ echo "source ~/dotfiles/vim/_vimrc" >> ~/.vimrc
 
 Run vim, exexute ``:NeoBundleInstall``.
 
-### (Optional) Create site settings.
-
-At the end of ``_vimrc``, ``~/site_vimrc`` will be loaded if exists.
 
 ## Zsh
 
@@ -131,7 +84,3 @@ $ cd ~/zsh_share/functions
 $ ln -sv ~/zsh_share/functions/pkg/cd-bookmark/cd-bookmark cd-bookmark
 $ ln -sv ~/zsh_share/functions/pkg/cd-bookmark/_cd-bookmark _cd-bookmark
 ```
-
-### (Optional) Create site settings.
-
-At the end of ``_zshrc``, ``~/site_zshrc`` will be loaded if exists.
